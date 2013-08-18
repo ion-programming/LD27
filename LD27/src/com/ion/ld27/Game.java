@@ -55,6 +55,8 @@ public class Game extends Applet implements Runnable, KeyListener{
 		
 		public void paint(Graphics g){
 			Render.update(g);
+			g.setColor(Color.BLUE);
+			g.fillRect(20,20,40,40);
 		}
 		
 		public void update (Graphics g){
