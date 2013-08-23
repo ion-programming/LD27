@@ -7,15 +7,20 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javafx.embed.swing.JFXPanel;
+
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
 import com.ion.ld27.input.Keys;
+import com.ion.ld27.sfx.Sounds;
 
 
 public class Game extends Applet implements Runnable, KeyListener{
 		
 		private static final long serialVersionUID = 1L;
+		
+		JFXPanel FX = new JFXPanel();
 		
 		private Image dbImage;
 		private Graphics dbg;
@@ -30,12 +35,14 @@ public class Game extends Applet implements Runnable, KeyListener{
 			setBackground(Color.black);
 //			SFX.portal = getAudioClip(getCodeBase(), "res/sounds/activatePortal.au");
 			Images.load();
+			Sounds.load();
 		}
 		
 		
 		public void start(){
 			Thread th = new Thread(this);
 			th.start();
+			Sounds.play(Sounds.sound);
 		}
 		
 		public void run(){
