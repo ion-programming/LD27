@@ -13,13 +13,10 @@
 	        <delete dir="${build.dir}"/>
 	 </target>
 	
-	<path id="jars">
-	    <fileset dir="lib" includes="**/*.jar"/>
-	</path>
 	
     <target name="compile" depends="clean">
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="jars" >
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" >
           
         </javac>
     </target>
@@ -29,11 +26,12 @@
         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
+            	<attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="${src.dir}">
             	<include name="${res.dir.name}/**/*" />
         	</fileset>
-        	<zipgroupfileset dir="lib" includes="*.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="lib/jfxrt.jar"/>
         </jar>
     </target>
 
