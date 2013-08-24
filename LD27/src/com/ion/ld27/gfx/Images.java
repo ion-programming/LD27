@@ -14,7 +14,7 @@ public class Images {
 	public static BufferedImage[] player;
 	
 	public static void load() throws IOException{
-		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/player.png"));
+		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/tiles.png"));
 		tiles = ImageHandler.all(tileImage, 8, 3, 1);
 
 //		youWon = DrawString.make("YOU WON", 7, 3, 0xFFFFFF);
