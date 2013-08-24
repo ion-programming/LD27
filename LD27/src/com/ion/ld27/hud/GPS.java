@@ -7,6 +7,7 @@ import java.awt.image.DataBufferInt;
 import java.util.Arrays;
 
 import com.ion.ld27.Game;
+import com.ion.ld27.gfx.Images;
 
 public class GPS {
 	public static int[][] screen = new int[50][31];
@@ -147,6 +148,7 @@ public class GPS {
 	}
 	
 	public static void draw(Graphics g){
+		g.drawImage(Images.gps, 3, Game.height - Images.gps.getHeight() - 5, null);
 		for(int y = 0; y < screen.length; y++){
 			for(int x = 0; x < screen[y].length; x++){
 				if(screen[y][x] == 0){

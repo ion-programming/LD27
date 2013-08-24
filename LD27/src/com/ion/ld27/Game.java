@@ -38,7 +38,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 			addKeyListener(this);
 			setSize(width, height);
 			setFocusable(true);
-			setBackground(Color.black);
+			setBackground(Color.CYAN);
 			try {
 				Images.load();
 			} catch (IOException e) {
