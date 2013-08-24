@@ -9,6 +9,6 @@ public class Render {
 	public static void update(Graphics g){
 			
 		GPS.draw(g);
-		Static.render(g);
+//		Static.render(g);
 	}
 }
