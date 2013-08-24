@@ -13,6 +13,5 @@ public class Player extends Entity {
 		ypos = y;
 		type = "player";
 	}
-	
-	
+
 }
