@@ -2,8 +2,10 @@ package com.ion.ld27.entities.items;
 
 import java.awt.image.BufferedImage;
 
+import com.ion.ld27.Game;
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.HUD;
 
 public class Machete extends Entity{
 
@@ -21,9 +23,8 @@ public class Machete extends Entity{
 	
 	@Override
 	public void collideWith(){
-		
-		
-		
+		HUD.storyText(new String[]{"Machete found!", "Your attack power increases."}, new int[]{2, 2}, true);
+		Game.entities.get(0).attack+= 2;
 		destroy();
 	}
 }

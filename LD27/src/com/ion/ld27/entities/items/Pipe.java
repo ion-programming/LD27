@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.HUD;
 
 public class Pipe extends Entity{
 
@@ -21,8 +22,7 @@ public class Pipe extends Entity{
 	
 	@Override
 	public void collideWith(){
-		
-		
+		HUD.storyText(new String[]{"Pipe found!"}, new int[]{2}, true);
 		
 		destroy();
 	}

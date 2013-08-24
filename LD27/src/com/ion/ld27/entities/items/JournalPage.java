@@ -4,10 +4,14 @@ import java.awt.image.BufferedImage;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.HUD;
+import com.ion.ld27.hud.Journal;
 
 public class JournalPage extends Entity{
+	public int id;
 
-	public JournalPage(int x, int y){
+	public JournalPage(int x, int y, int id){
+		this.id = id;
 		health = 10;
 		healthRange = 10;
 		speed = 4;
@@ -21,8 +25,29 @@ public class JournalPage extends Entity{
 	
 	@Override
 	public void collideWith(){
-		
-		
+		if(id == 1){
+			Journal.jo.add(Journal.j1);
+		}
+		else if(id == 2){
+			Journal.jo.add(Journal.j2);
+		}
+		else if(id == 3){
+			Journal.jo.add(Journal.j3);
+		}
+		else if(id == 4){
+			Journal.jo.add(Journal.j4);
+		}
+		else if(id == 5){
+			Journal.jo.add(Journal.j5);
+		}
+		else if(id == 6){
+			Journal.jo.add(Journal.j6);
+		}
+		else if(id == 7){
+			Journal.jo.add(Journal.j7);
+		}
+		Journal.j = Journal.jo.size() - 1;
+		HUD.storyText(new String[]{"Journal entry found",  "Press j to open"},new int[]{2, 2}, true);
 		
 		destroy();
 	}

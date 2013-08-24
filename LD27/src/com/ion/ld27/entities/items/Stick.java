@@ -2,8 +2,10 @@ package com.ion.ld27.entities.items;
 
 import java.awt.image.BufferedImage;
 
+import com.ion.ld27.Game;
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.HUD;
 
 public class Stick extends Entity{
 
@@ -21,9 +23,8 @@ public class Stick extends Entity{
 	
 	@Override
 	public void collideWith(){
-		
-		
-		
+		HUD.storyText(new String[]{"Stick found!", "Your attack power increases."}, new int[]{2, 2}, true);
+		Game.entities.get(0).attack++;
 		destroy();
 	}
 }

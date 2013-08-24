@@ -7,6 +7,7 @@ import com.ion.ld27.Game;
 
 public class Entity {
 
+	public int attack;
 	public int speed = 4;
 	public int xpos;
 	public int ypos;

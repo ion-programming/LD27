@@ -3,6 +3,7 @@ package com.ion.ld27.hud;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
@@ -12,17 +13,17 @@ import com.ion.ld27.gfx.Images;
 public class Journal {
 
 	static BufferedImage jback;
-	static BufferedImage j1;
-	static BufferedImage j2;
-	static BufferedImage j3;
-	static BufferedImage j4;
-	static BufferedImage j5;
-	static BufferedImage j6;
-	static BufferedImage j7;
+	public static ArrayList<BufferedImage> jo = new ArrayList<BufferedImage>();
+	public static BufferedImage j1;
+	public static BufferedImage j2;
+	public static BufferedImage j3;
+	public static BufferedImage j4;
+	public static BufferedImage j5;
+	public static BufferedImage j6;
+	public static BufferedImage j7;
 	
 	public static boolean show = false;
-	public static int j = 1;
-	public static int mj = 7;
+	public static int j = 0;
 	
 	
 	public static void load() throws IOException{
@@ -43,32 +44,18 @@ public class Journal {
 		j7 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/j7.png"));
 		j7 = ImageHandler.resizeImage(j7, j7.getWidth() * 2, j7.getHeight() * 2);
 	}
+	
 	public static void render(Graphics g){
 		if(show){
-			g.drawImage(jback, 0, 0, null);
-			BufferedImage cur = null;
-			if(j == 1){
-				cur = j1;
+			if(jo.size() > 0){
+				g.drawImage(jback, 0, 0, null);
+				BufferedImage cur = null;
+				cur = jo.get(j);
+				g.drawImage(cur, 0, 0, null);
 			}
-			else if(j == 2){
-				cur = j2;
+			else{
+				show = false;
 			}
-			else if(j == 3){
-				cur = j3;
-			}
-			else if(j == 4){
-				cur = j4;
-			}
-			else if(j == 5){
-				cur = j5;
-			}
-			else if(j == 6){
-				cur = j6;
-			}
-			else if(j == 7){
-				cur = j7;
-			}
-			g.drawImage(cur, 0, 0, null);
 		}
 	}
 }

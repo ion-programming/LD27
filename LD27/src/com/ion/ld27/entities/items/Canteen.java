@@ -2,8 +2,10 @@ package com.ion.ld27.entities.items;
 
 import java.awt.image.BufferedImage;
 
+import com.ion.ld27.Game;
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.HUD;
 
 public class Canteen extends Entity{
 
@@ -21,9 +23,9 @@ public class Canteen extends Entity{
 	
 	@Override
 	public void collideWith(){
-		
-		
-		
+		HUD.storyText(new String[]{"Canteen found!", "Your health increases."}, new int[]{2, 2}, true);
+		Game.entities.get(0).healthRange+= 2;
+		Game.entities.get(0).health+= 2;
 		destroy();
 	}
 }

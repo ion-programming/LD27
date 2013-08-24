@@ -25,7 +25,7 @@ public class Keys {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_A){
 			if(Journal.show){
-				if(Journal.j > 1){
+				if(Journal.j > 0){
 					Journal.j--;
 				}
 			}
@@ -35,7 +35,7 @@ public class Keys {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
 			if(Journal.show){
-				if(Journal.j < Journal.mj){
+				if(Journal.j < Journal.jo.size() - 1){
 					Journal.j++;
 				}
 			}

@@ -13,6 +13,7 @@ import javafx.embed.swing.JFXPanel;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.entities.Player;
+import com.ion.ld27.entities.items.JournalPage;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
@@ -55,7 +56,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 			Sounds.load();
 			entities.add(new Player(getWidth()/2 - 32, getHeight()/2 - 32));
 			Map.load();
-//			entities.add(new Lantern(512, 512));
+			entities.add(new JournalPage(512, 512, 1));
 		}
 		
 		
