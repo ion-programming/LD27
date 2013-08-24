@@ -55,6 +55,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 			Sounds.load();
 			entities.add(new Player(getWidth()/2 - 32, getHeight()/2 - 32));
 			Map.load();
+//			entities.add(new Lantern(512, 512));
 		}
 		
 		

@@ -14,10 +14,14 @@ public class Keys {
 	
 	public static void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_W){
-			up = true;
+			if(!Journal.show){
+				up = true;
+			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_S){
-			down = true;
+			if(!Journal.show){
+				down = true;
+			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_A){
 			if(Journal.show){

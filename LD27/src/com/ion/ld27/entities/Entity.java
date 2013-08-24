@@ -41,6 +41,9 @@ public class Entity {
 		int e = Game.entities.indexOf(this);
 		Game.entities.remove(e);
 	}
+	public void collideWith(){
+		
+	}
 	
 	public void check(Entity ent, boolean isPlayer){
 		boolean hit = false;
@@ -87,6 +90,11 @@ public class Entity {
 		}
 		if(!nr){
 			r = false;
+		}
+		if(isPlayer){
+			if(hit){
+				ent.collideWith();
+			}
 		}
 	}
 }

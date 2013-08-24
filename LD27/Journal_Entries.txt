@@ -1,0 +1,7 @@
+J1 "I feel faint, my vision is failing me... I haven't had water in days, what I'd do for a full canteen."
+J2 "My last comfort is gone, I've lost my pipe somewhere in this awful mine... I don't know how long I can keep this up."
+J3 "There appears to be another cave ahead, hope I don't encounter anything too bad... I've lost my machete."
+J4 "I see light ahead, its been so long since I've smelt the smell of fresh air..."
+J5 "This is strange, my GPS doesn't work in the cave. I guess I can't keep a track log for this bit."
+J6 "I need to do something, I can't just sit here and do nothing with what's going on..."
+J7 "The first bomb has been dropped. I've set up camp in the wilderness. This may be my only chance..."
