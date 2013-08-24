@@ -22,7 +22,7 @@ public class Journal {
 	
 	public static boolean show = false;
 	public static int j = 1;
-	public static int mj = 2;
+	public static int mj = 7;
 	
 	
 	public static void load() throws IOException{
