@@ -55,6 +55,95 @@ public class GPS {
 				}
 			}
 		}
+		
+		char[] xco = ("" + x).toCharArray();
+		char[] yco = ("" + y).toCharArray();
+		for(int n = 0; n < xco.length; n++){
+			int[][] num;
+			if(xco[n] == '0'){
+				num = SevenSeg.numbers[0];
+			}
+			else if(xco[n] == '1'){
+				num = SevenSeg.numbers[1];
+			}
+			else if(xco[n] == '2'){
+				num = SevenSeg.numbers[2];		
+			}
+			else if(xco[n] == '3'){
+				num = SevenSeg.numbers[3];
+			}
+			else if(xco[n] == '4'){
+				num = SevenSeg.numbers[4];
+			}
+			else if(xco[n] == '5'){
+				num = SevenSeg.numbers[5];
+			}
+			else if(xco[n] == '6'){
+				num = SevenSeg.numbers[6];
+			}
+			else if(xco[n] == '7'){
+				num = SevenSeg.numbers[7];
+			}
+			else if(xco[n] == '8'){
+				num = SevenSeg.numbers[8];
+			}
+			else if(xco[n] == '9'){
+				num = SevenSeg.numbers[9];
+			}
+			else{
+				num = SevenSeg.numbers[10];
+			}
+			for(int yp = 0; yp < num.length; yp++){
+				for(int xp = 0; xp < num[yp].length; xp++){
+					if(num[yp][xp] == 1){
+						screen[32 + yp][n*5 + 1 + xp] = 1;
+					}
+				}
+			}
+		}
+		for(int n = 0; n < yco.length; n++){
+			int[][] num;
+			if(yco[n] == '0'){
+				num = SevenSeg.numbers[0];
+			}
+			else if(yco[n] == '1'){
+				num = SevenSeg.numbers[1];
+			}
+			else if(yco[n] == '2'){
+				num = SevenSeg.numbers[2];		
+			}
+			else if(yco[n] == '3'){
+				num = SevenSeg.numbers[3];
+			}
+			else if(yco[n] == '4'){
+				num = SevenSeg.numbers[4];
+			}
+			else if(yco[n] == '5'){
+				num = SevenSeg.numbers[5];
+			}
+			else if(yco[n] == '6'){
+				num = SevenSeg.numbers[6];
+			}
+			else if(yco[n] == '7'){
+				num = SevenSeg.numbers[7];
+			}
+			else if(yco[n] == '8'){
+				num = SevenSeg.numbers[8];
+			}
+			else if(yco[n] == '9'){
+				num = SevenSeg.numbers[9];
+			}
+			else{
+				num = SevenSeg.numbers[10];
+			}
+			for(int yp = 0; yp < num.length; yp++){
+				for(int xp = 0; xp < num[yp].length; xp++){
+					if(num[yp][xp] == 1){
+						screen[42 + yp][n*5 + 1 + xp] = 1;
+					}
+				}
+			}
+		}
 	}
 	
 	public static void draw(Graphics g){

@@ -13,60 +13,6 @@ public class SevenSeg {
 		},
 		new int[][]{
 				new int[]{0, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{0, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{0, 0, 0, 0}
-		},
-		new int[][]{
-				new int[]{0, 1, 1, 0},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 1, 1, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{0, 1, 1, 0}
-		},
-		new int[][]{
-				new int[]{0, 1, 1, 0},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 1, 1, 0},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 1, 1, 0}
-		},
-		new int[][]{
-				new int[]{0, 0, 0, 0},
-				new int[]{1, 0, 0, 1},
-				new int[]{1, 0, 0, 1},
-				new int[]{0, 1, 1, 0},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 0}
-		},
-		new int[][]{
-				new int[]{0, 1, 1, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{0, 1, 1, 0},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 0, 0, 1},
-				new int[]{0, 1, 1, 0}
-		},
-		new int[][]{
-				new int[]{0, 1, 1, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{1, 0, 0, 0},
-				new int[]{0, 1, 1, 0},
-				new int[]{1, 0, 0, 1},
-				new int[]{1, 0, 0, 1},
-				new int[]{0, 1, 1, 0}
-		},
-		new int[][]{
-				new int[]{0, 1, 1, 0},
 				new int[]{0, 0, 0, 1},
 				new int[]{0, 0, 0, 1},
 				new int[]{0, 0, 0, 0},
@@ -76,6 +22,60 @@ public class SevenSeg {
 		},
 		new int[][]{
 				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 1, 1, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{0, 1, 1, 0}
+		},
+		new int[][]{
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 1, 1, 0}
+		},
+		new int[][]{
+				new int[]{0, 0, 0, 0},
+				new int[]{1, 0, 0, 1},
+				new int[]{1, 0, 0, 1},
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 0}
+		},
+		new int[][]{
+				new int[]{0, 1, 1, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 1, 1, 0}
+		},
+		new int[][]{
+				new int[]{0, 1, 1, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{1, 0, 0, 0},
+				new int[]{0, 1, 1, 0},
+				new int[]{1, 0, 0, 1},
+				new int[]{1, 0, 0, 1},
+				new int[]{0, 1, 1, 0}
+		},
+		new int[][]{
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 1},
+				new int[]{0, 0, 0, 0}
+		},
+		new int[][]{
+				new int[]{0, 1, 1, 0},
 				new int[]{1, 0, 0, 1},
 				new int[]{1, 0, 0, 1},
 				new int[]{0, 1, 1, 0},
@@ -91,7 +91,16 @@ public class SevenSeg {
 				new int[]{0, 0, 0, 1},
 				new int[]{0, 0, 0, 1},
 				new int[]{0, 1, 1, 0}
-		}
+		},
+		new int[][]{
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 1, 1, 0},
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 0, 0, 0},
+				new int[]{0, 0, 0, 0}
+		},
 	};
 		
 }
