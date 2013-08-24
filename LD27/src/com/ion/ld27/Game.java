@@ -34,6 +34,10 @@ public class Game extends Applet implements Runnable, KeyListener{
 		public static int width = 1248;
 		public static int height = 752;
 		
+
+		static double time;
+		double sleepTime;
+		static double FPS = 60;
 		
 		public static ArrayList<Entity> entities = new ArrayList<Entity>();
 		
@@ -64,13 +68,20 @@ public class Game extends Applet implements Runnable, KeyListener{
 			Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 			while(true){
 				repaint();
-						
+				time = System.nanoTime();
+				sleepTime = 1000/FPS - (System.nanoTime() - time)/1000000;
 				try{
-					Thread.sleep(20);
-				} 
+					if(sleepTime > 10){
+						Thread.sleep((long) sleepTime);
+					}
+					else{
+						Thread.sleep(10);
+					}
+				} 	
 				catch(InterruptedException ex){
 					ex.printStackTrace();
 				}
+				System.out.println("FPS: " + (int)(1000/((System.nanoTime() - time)/1000000)));
 				Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			}
 		}

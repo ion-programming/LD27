@@ -22,7 +22,11 @@ public class Entity {
 	public boolean d = true;
 	
 	public void draw(Graphics g){
-		g.drawImage(imgs[currentImage], xpos - Game.entities.get(0).xpos + Game.width/2 - 32, ypos - Game.entities.get(0).ypos + Game.height/2 - 32, null);
+		if(ypos - Game.entities.get(0).ypos + Game.height/2 - 32 > -64 && ypos - Game.entities.get(0).ypos + Game.height/2 - 32 < Game.height){
+			if(xpos - Game.entities.get(0).xpos + Game.width/2 - 32 >  -64 && xpos - Game.entities.get(0).xpos + Game.width/2 - 32 < Game.width){
+				g.drawImage(imgs[currentImage], xpos - Game.entities.get(0).xpos + Game.width/2 - 32, ypos - Game.entities.get(0).ypos + Game.height/2 - 32, null);
+			}
+		}
 	}
 	
 	public void update(){
