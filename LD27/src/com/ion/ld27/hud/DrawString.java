@@ -25,7 +25,7 @@ public class DrawString{
 				starts.add(start);
 			}
 		}
-		BufferedImage img = new BufferedImage(width * 64, starts.size() * 64, Images.fontTiles.getType());
+		BufferedImage img = new BufferedImage(width * 32, starts.size() * 32, Images.fontTiles.getType());
 		Graphics2D g = img.createGraphics();
 		for(int row = 0; row < starts.size(); row++){
 			start = starts.get(row);
@@ -193,7 +193,7 @@ public class DrawString{
 				else{
 					let = 53;
 				}
-				g.drawImage(Images.font[let], n*64, row*64, null);
+				g.drawImage(Images.font[let], n*32, row*32, null);
 				
 			}
 			

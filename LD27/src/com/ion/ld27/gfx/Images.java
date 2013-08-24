@@ -23,7 +23,7 @@ public class Images {
 		gps = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/gps.png"));
 		tiles = ImageHandler.all(tileImage, 8, 3, 1);
 		fontTiles = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/font.png"));
-		font = ImageHandler.all(fontTiles, 27, 2, 1);
+		font = ImageHandler.all(fontTiles, 27, 2, 2);
 		messageBorder = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/messageBorder.png"));
 		border = ImageHandler.all(messageBorder, 8, 1, 1);
 	}

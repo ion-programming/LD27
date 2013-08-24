@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import com.ion.ld27.Game;
-import com.ion.ld27.gfx.ImageHandler;
 import com.ion.ld27.gfx.Images;
 
 public class HUD {
@@ -31,7 +30,7 @@ public class HUD {
 			g2.drawImage(Images.border[1], w * th, 0, null);
 			g2.drawImage(Images.border[2], 0, h * th, null);
 			g2.drawImage(Images.border[3], w * th, h * th, null);
-			g2.setColor(new Color(128,128,128));
+			g2.setColor(new Color(0x637041));
 			g2.fillRect(0 + th, 0 + th, w * th - th, h* th - th);
 			
 			for(int x = 1; x < w; x++){
@@ -50,8 +49,7 @@ public class HUD {
 			
 			g2.drawImage(textImg, th, th, null);
 			
-			BufferedImage draw = ImageHandler.resizeImage(img, img.getWidth() / 2, img.getHeight() / 2);
-			g.drawImage(draw, (Game.width - draw.getWidth())/2, 0, null);
+			g.drawImage(img, (Game.width - img.getWidth())/2, 0, null);
 			
 			if(timeLeft <= 0){
 				show = false;
