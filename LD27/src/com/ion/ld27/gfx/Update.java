@@ -7,7 +7,7 @@ import com.ion.ld27.hud.GPS;
 
 public class Update {
 	public static void update(){
-		GPS.update(Game.entities.get(0).xpos, Game.entities.get(0).ypos, 0, 0);
+		GPS.update(Game.entities.get(0).xpos, Game.entities.get(0).ypos, 64, 64);
 		for(int n = 0; n < Game.entities.size(); n++){
 			Game.entities.get(n).update();
 		}

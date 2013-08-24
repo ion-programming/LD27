@@ -30,8 +30,8 @@ public class Game extends Applet implements Runnable, KeyListener{
 		private Image dbImage;
 		private Graphics dbg;
 	
-		public static int width = 1250;
-		public static int height = 750;
+		public static int width = 1248;
+		public static int height = 752;
 		
 		
 		public static ArrayList<Entity> entities = new ArrayList<Entity>();

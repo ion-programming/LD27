@@ -22,7 +22,7 @@ public class Entity {
 	public boolean d = true;
 	
 	public void draw(Graphics g){
-		g.drawImage(imgs[currentImage], xpos, ypos, null);
+		g.drawImage(imgs[currentImage], xpos - Game.entities.get(0).xpos + Game.width/2 - 32, ypos - Game.entities.get(0).ypos + Game.height/2 - 32, null);
 	}
 	
 	public void update(){
@@ -38,4 +38,51 @@ public class Entity {
 		Game.entities.remove(e);
 	}
 	
+	public void check(Entity ent, boolean isPlayer){
+		boolean hit = false;
+		boolean nd = true;
+		boolean nu = true;
+		boolean nr = true;
+		boolean nl = true;
+		boolean inx = false;
+		boolean iny = false;
+		if(Math.abs(xpos - ent.xpos) < 64){
+			inx = true;
+		}
+		if(Math.abs(ypos - ent.ypos) < 64){
+			iny = true;
+		}
+		if(inx){
+			if(ypos - ent.ypos + 1 > -64 && ypos - ent.ypos + 1 < 0){
+				nd = false;
+				hit = true;
+			}
+			if(ypos - ent.ypos - 1 < 64 && ypos - ent.ypos - 1 > 0){
+				nu = false;
+				hit = true;
+			}
+		}
+		if(iny){
+			if(xpos - ent.xpos + 1 > -64 && xpos - ent.xpos + 1 < 0){
+				nr = false;
+				hit = true;
+			}
+			if(xpos - ent.xpos - 1 < 64 && xpos - ent.xpos - 1 > 0){
+				nl = false;
+				hit = true;
+			}
+		}
+		if(!nd){
+			d = false;
+		}
+		if(!nu){
+			u = false;
+		}
+		if(!nl){
+			l = false;
+		}
+		if(!nr){
+			r = false;
+		}
+	}
 }
