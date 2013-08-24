@@ -12,15 +12,20 @@ public class Images {
 	public static BufferedImage tileImage;
 	public static BufferedImage gps;
 	public static BufferedImage[] tiles;
+	public static BufferedImage fontTiles;
+	public static BufferedImage[] font;
+	public static BufferedImage messageBorder;
+	public static BufferedImage[] border;
 	public static BufferedImage[] player;
 	
 	public static void load() throws IOException{
 		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/tiles.png"));
 		gps = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/gps.png"));
 		tiles = ImageHandler.all(tileImage, 8, 3, 1);
-
-//		youWon = DrawString.make("YOU WON", 7, 3, 0xFFFFFF);
-
+		fontTiles = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/font.png"));
+		font = ImageHandler.all(fontTiles, 27, 2, 1);
+		messageBorder = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/messageBorder.png"));
+		border = ImageHandler.all(messageBorder, 8, 1, 1);
 	}
 	
 }
