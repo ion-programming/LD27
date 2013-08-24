@@ -7,7 +7,7 @@ import java.util.Arrays;
 import com.ion.ld27.Game;
 
 public class GPS {
-	public static int[][] screen = new int[50][32];
+	public static int[][] screen = new int[50][31];
 	
 	static int xoffset = 16;
 	static int yoffset = Game.height - 216;
@@ -19,10 +19,18 @@ public class GPS {
 			Arrays.fill(screen[n], 0);
 		}
 		screen[15][15] = 1;
-		screen[15][16] = 1;
-		screen[16][15] = 1;
-		screen[16][16] = 1;
-		
+		if((tx != x) || (ty != y)){
+			double theta = Math.atan(Math.abs(tx - x)/Math.abs(ty - y));
+			int cx = (int)(14*Math.sin(theta));
+			int cy = (int)(14*Math.cos(theta));
+			if(tx - x < 0){
+				cx = -cx;
+			}
+			if(ty - y < 0){
+				cy = -cy;
+			}
+			screen[cy + 15][cx + 15] = 1;
+		}
 	}
 	
 	public static void draw(Graphics g){
