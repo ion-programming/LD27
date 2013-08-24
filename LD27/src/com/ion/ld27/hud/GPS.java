@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.Arrays;
+import java.util.Random;
 
 import com.ion.ld27.Game;
 import com.ion.ld27.gfx.Images;
@@ -16,6 +17,9 @@ public class GPS {
 	static int yoffset = Game.height - 216;
 	
 	static Color bkgrnd = new Color(0x637041);
+	
+	static boolean stat = false;
+	static Random r = new Random();
 	
 	public static void update(int x, int y, int tx, int ty){
 		for(int n = 0; n < screen.length; n++){
@@ -151,13 +155,25 @@ public class GPS {
 		g.drawImage(Images.gps, 3, Game.height - Images.gps.getHeight() - 5, null);
 		for(int y = 0; y < screen.length; y++){
 			for(int x = 0; x < screen[y].length; x++){
-				if(screen[y][x] == 0){
-					g.setColor(bkgrnd);
+				if(!stat){
+					if(screen[y][x] == 0){
+						g.setColor(bkgrnd);
+					}
+					else{
+						g.setColor(Color.black);
+					}
+					g.fillRect(x*4 + xoffset, y*4 + yoffset, 4, 4);
 				}
 				else{
-					g.setColor(Color.black);
+					int a = r.nextInt(2);
+					if(a == 0){
+						g.setColor(bkgrnd);
+					}
+					else{
+						g.setColor(Color.black);
+					}
+					g.fillRect(x*4 + xoffset, y*4 + yoffset, 4, 4);
 				}
-				g.fillRect(x*4 + xoffset, y*4 + yoffset, 4, 4);
 			}
 		}
 	}
