@@ -17,6 +17,7 @@ import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
 import com.ion.ld27.hud.HUD;
 import com.ion.ld27.input.Keys;
+import com.ion.ld27.map.MapLoader;
 import com.ion.ld27.sfx.Sounds;
 
 

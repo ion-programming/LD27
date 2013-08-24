@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Images {
 	
+	public static BufferedImage map1;
 	public static BufferedImage tileImage;
 	public static BufferedImage gps;
 	public static BufferedImage[] tiles;
@@ -26,6 +27,7 @@ public class Images {
 		font = ImageHandler.all(fontTiles, 27, 2, 2);
 		messageBorder = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/messageBorder.png"));
 		border = ImageHandler.all(messageBorder, 8, 1, 1);
+		map1 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map1.png"));
 	}
 	
 }
