@@ -2,6 +2,8 @@ package com.ion.ld27.input;
 
 import java.awt.event.KeyEvent;
 
+import com.ion.ld27.hud.GPS;
+
 public class Keys {
 	
 	public static boolean up = false;
@@ -21,6 +23,10 @@ public class Keys {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
 			right = true;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_Q){
+			GPS.startFlashing = true;
 		}
 		
 		

@@ -21,6 +21,11 @@ public class GPS {
 	static boolean stat = false;
 	static Random r = new Random();
 	
+	static Color fr = new Color(0x4C0000);
+	static Color fg = new Color(0x004C00);
+	
+	
+	
 	public static void update(int x, int y, int tx, int ty){
 		for(int n = 0; n < screen.length; n++){
 			Arrays.fill(screen[n], 0);
@@ -151,8 +156,47 @@ public class GPS {
 		}
 	}
 	
+	public static boolean startFlashing = false;
+	static boolean doingStuff = false;
+	static int tl = 2;
+	static long startTime;
+	
 	public static void draw(Graphics g){
 		g.drawImage(Images.gps, 3, Game.height - Images.gps.getHeight() - 5, null);
+		
+		if(startFlashing){
+			startFlashing = false;
+			startTime = System.nanoTime() / 1000000000;
+			doingStuff = true;
+		}
+		
+		long time = System.nanoTime() / 1000000000;
+		
+		if(doingStuff){
+			int a = r.nextInt(2);
+			if(a == 0){
+				g.setColor(Color.red);
+				g.fillOval(125, Game.height - 235, 7, 7);
+				
+			}
+			else{
+				g.setColor(Color.green);
+				g.fillOval(125, Game.height - 250, 7, 7);
+			}
+		}
+		else{
+			g.setColor(fg);
+			g.fillOval(125, Game.height - 250, 7, 7);
+			g.setColor(fr);
+			g.fillOval(125, Game.height - 235, 7, 7);
+		}
+		
+
+		if(time - startTime > tl && doingStuff){
+			doingStuff = false;
+		}
+		
+		
 		for(int y = 0; y < screen.length; y++){
 			for(int x = 0; x < screen[y].length; x++){
 				if(!stat){
