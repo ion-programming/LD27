@@ -17,7 +17,8 @@ public class Images {
 	public static BufferedImage[] font;
 	public static BufferedImage messageBorder;
 	public static BufferedImage[] border;
-	public static BufferedImage[] player;
+	public static BufferedImage player;
+	public static BufferedImage[] playerTiles;
 	
 	public static void load() throws IOException{
 		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/tiles.png"));
@@ -27,6 +28,8 @@ public class Images {
 		font = ImageHandler.all(fontTiles, 27, 2, 2);
 		messageBorder = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/messageBorder.png"));
 		border = ImageHandler.all(messageBorder, 8, 1, 1);
+		player = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/player.png"));
+		playerTiles = ImageHandler.all(player, 1, 1, 1);
 		map1 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map1.png"));
 	}
 	

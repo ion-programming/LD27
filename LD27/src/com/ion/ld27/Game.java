@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javafx.embed.swing.JFXPanel;
 
 import com.ion.ld27.entities.Entity;
+import com.ion.ld27.entities.Player;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
@@ -46,6 +47,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 				e.printStackTrace();
 			}
 			Sounds.load();
+			entities.add(new Player(getWidth()/2 - 32, getHeight()/2 - 32));
 			Map.load();
 		}
 		
