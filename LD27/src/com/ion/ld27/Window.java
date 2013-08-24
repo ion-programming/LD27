@@ -25,7 +25,7 @@ public class Window extends JFrame {
 		}
 
 		public Window() {
-			setTitle("LD27");
+			setTitle("The Compass");
 			setResizable(false);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, Game.width + 6, Game.height + 32);
