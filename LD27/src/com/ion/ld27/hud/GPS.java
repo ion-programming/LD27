@@ -12,19 +12,16 @@ public class GPS {
 	static int xoffset = 16;
 	static int yoffset = Game.height - 216;
 	
-	static Color bkgrnd = new Color(0x8FA556);
+	static Color bkgrnd = new Color(0x637041);
 	
-	public static void init(){
+	public static void update(int x, int y, int tx, int ty){
 		for(int n = 0; n < screen.length; n++){
 			Arrays.fill(screen[n], 0);
 		}
-		screen[24][24] = 1;
-		screen[24][25] = 1;
-		screen[25][24] = 1;
-		screen[25][25] = 1;
-	}
-	
-	public static void update(int x, int y, int tx, int ty){
+		screen[15][15] = 1;
+		screen[15][16] = 1;
+		screen[16][15] = 1;
+		screen[16][16] = 1;
 		
 	}
 	
