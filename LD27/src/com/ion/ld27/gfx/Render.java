@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import com.ion.ld27.Game;
 import com.ion.ld27.hud.GPS;
 import com.ion.ld27.hud.HUD;
+import com.ion.ld27.hud.Journal;
 import com.ion.ld27.map.Map;
 
 public class Render {
@@ -16,6 +17,7 @@ public class Render {
 		}
 		HUD.update(g);
 		GPS.draw(g);
+		Journal.render(g);
 //		Static.render(g);
 	}
 }

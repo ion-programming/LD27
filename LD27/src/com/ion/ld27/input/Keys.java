@@ -3,6 +3,7 @@ package com.ion.ld27.input;
 import java.awt.event.KeyEvent;
 
 import com.ion.ld27.hud.GPS;
+import com.ion.ld27.hud.Journal;
 
 public class Keys {
 	
@@ -19,10 +20,24 @@ public class Keys {
 			down = true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_A){
-			left = true;
+			if(Journal.show){
+				if(Journal.j > 1){
+					Journal.j--;
+				}
+			}
+			else{
+				left = true;
+			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			right = true;
+			if(Journal.show){
+				if(Journal.j < Journal.mj){
+					Journal.j++;
+				}
+			}
+			else{
+				right = true;
+			}
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_Q){
@@ -35,6 +50,15 @@ public class Keys {
 			}
 			else{
 				GPS.bkgrnd = GPS.bkgrndln;
+			}
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_J){
+			if(Journal.show){
+				Journal.show = false;
+			}
+			else{
+				Journal.show = true;
 			}
 		}
 		

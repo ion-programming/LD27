@@ -16,6 +16,7 @@ import com.ion.ld27.entities.Player;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
+import com.ion.ld27.hud.Journal;
 import com.ion.ld27.input.Keys;
 import com.ion.ld27.map.Map;
 import com.ion.ld27.sfx.Sounds;
@@ -43,6 +44,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 			setBackground(Color.black);
 			try {
 				Images.load();
+				Journal.load();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
