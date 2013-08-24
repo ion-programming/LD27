@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.embed.swing.JFXPanel;
@@ -38,7 +39,11 @@ public class Game extends Applet implements Runnable, KeyListener{
 			setSize(width, height);
 			setFocusable(true);
 			setBackground(Color.black);
-			Images.load();
+			try {
+				Images.load();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			Sounds.load();
 		}
 		

@@ -7,7 +7,7 @@ public class Player extends Entity {
 	public Player(int x, int y){
 		health = 10;
 		healthRange = 10;
-		imgs = Images.players;
+		imgs = Images.player;
 		currentImage = 0;
 		xpos = x;
 		ypos = y;

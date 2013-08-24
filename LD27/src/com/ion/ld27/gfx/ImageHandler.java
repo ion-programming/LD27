@@ -26,35 +26,8 @@ public class ImageHandler {
 	            imgNum++;  
 			}
 		}	
-		
 		return pics;
 	}
-	
-	public static BufferedImage replaceColor(BufferedImage srcBuf, int cSearch, int cReplace){
-	      int[] srcRGB = srcBuf.getRGB(0, 0, srcBuf.getWidth(), srcBuf.getHeight(), null, 0, srcBuf.getWidth());
-
-	      int[] dstRGB = new int[srcRGB.length];
-	      int[] dstA = new int[dstRGB.length];
-
-	      for (int i = 0; i < srcRGB.length; i++)
-	      {
-	         if ((srcRGB[i] & 0x00FFFFFF) == cSearch) // match RGB
-	         {
-	            dstRGB[i] = cReplace & 0x00FFFFFF; // set RGB
-	            dstA[i] = (cReplace >> 24) & 0xFF; // set A
-	         }
-	         else
-	         {
-	            dstRGB[i] = srcRGB[i]; // copy RGB
-	            dstA[i] = 0xFF; // make A opaque
-	         }
-	      }
-
-	      BufferedImage dstBuf = new BufferedImage(srcBuf.getWidth(), srcBuf.getHeight(), BufferedImage.TYPE_INT_ARGB);
-	      dstBuf.setRGB(0, 0, dstBuf.getWidth(), dstBuf.getHeight(), dstRGB, 0, dstBuf.getWidth());
-	      dstBuf.getAlphaRaster().setPixels(0, 0, dstBuf.getWidth(), dstBuf.getHeight(), dstA);
-	      return dstBuf;
-	   }
 	
 	public static BufferedImage resizeImage(BufferedImage img, int newW, int newH) {  
         int w = img.getWidth();  
