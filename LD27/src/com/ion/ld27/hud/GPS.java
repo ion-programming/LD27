@@ -16,7 +16,9 @@ public class GPS {
 	static int xoffset = 16;
 	static int yoffset = Game.height - 216;
 	
-	static Color bkgrnd = new Color(0x637041);
+	public static Color bkgrnd = new Color(0x637041);
+	public static Color bkgrndly = new Color(0xB2AE2B);
+	public static Color bkgrndln = new Color(0x637041);
 	
 	static boolean stat = false;
 	static Random r = new Random();

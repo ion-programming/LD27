@@ -29,6 +29,14 @@ public class Keys {
 			GPS.startFlashing = true;
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_L){
+			if(GPS.bkgrnd.getRGB() == GPS.bkgrndln.getRGB()){
+				GPS.bkgrnd = GPS.bkgrndly;
+			}
+			else{
+				GPS.bkgrnd = GPS.bkgrndln;
+			}
+		}
 		
 	}
 
