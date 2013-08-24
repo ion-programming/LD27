@@ -2,6 +2,8 @@ package com.ion.ld27.hud;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 import java.util.Arrays;
 
 import com.ion.ld27.Game;
@@ -18,9 +20,17 @@ public class GPS {
 		for(int n = 0; n < screen.length; n++){
 			Arrays.fill(screen[n], 0);
 		}
+		screen[14][14] = 1;
+		screen[14][15] = 1;
+		screen[14][16] = 1;
+		screen[15][14] = 1;
 		screen[15][15] = 1;
+		screen[15][16] = 1;
+		screen[16][14] = 1;
+		screen[16][15] = 1;
+		screen[16][16] = 1;
 		if((tx != x) || (ty != y)){
-			double theta = Math.atan(Math.abs(tx - x)/Math.abs(ty - y));
+			double theta = Math.atan((double)Math.abs(tx - x)/(double)Math.abs(ty - y));
 			int cx = (int)(14*Math.sin(theta));
 			int cy = (int)(14*Math.cos(theta));
 			if(tx - x < 0){
@@ -29,7 +39,21 @@ public class GPS {
 			if(ty - y < 0){
 				cy = -cy;
 			}
-			screen[cy + 15][cx + 15] = 1;
+			BufferedImage img = new BufferedImage(31, 31, BufferedImage.TYPE_INT_RGB);
+			Graphics g = img.createGraphics();
+			g.setColor(Color.black);
+			g.drawLine(15, 15, cx + 15, cy + 15);
+			g.dispose();
+			int[] pixels = ((DataBufferInt)img.getRaster().getDataBuffer()).getData();
+			int n = 0;
+			for(int yp = 0; yp < 31; yp++){
+				for(int xp = 0; xp < 31; xp++){
+					if(pixels[n] == Color.black.getRGB()){
+						screen[yp][xp] = 1;
+					}
+					n++;
+				}
+			}
 		}
 	}
 	
