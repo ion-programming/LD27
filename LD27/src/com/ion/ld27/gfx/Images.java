@@ -25,6 +25,8 @@ public class Images {
 	public static BufferedImage[] items;
 	public static BufferedImage end;
 	public static BufferedImage dark;
+	public static BufferedImage cave;
+	public static BufferedImage[] caveTiles;
 	
 	
 	public static void load() throws IOException{
@@ -44,6 +46,8 @@ public class Images {
 		
 		end = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/end.png"));
 		end = ImageHandler.resizeImage(end, end.getWidth() * 2, end.getHeight() * 2);
+		cave = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/caveTiles.png"));
+		caveTiles = ImageHandler.all(cave, 4, 1, 1);
 	}
 	
 }
