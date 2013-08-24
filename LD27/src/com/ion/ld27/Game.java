@@ -6,9 +6,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import javafx.embed.swing.JFXPanel;
 
+import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
@@ -25,15 +27,17 @@ public class Game extends Applet implements Runnable, KeyListener{
 		private Image dbImage;
 		private Graphics dbg;
 	
-		public static int width = 512;
-		public static int height = 512;
+		public static int width = 1250;
+		public static int height = 750;
+		
+		
+		public static ArrayList<Entity> entities = new ArrayList<Entity>();
 		
 		public void init(){
 			addKeyListener(this);
 			setSize(width, height);
 			setFocusable(true);
 			setBackground(Color.black);
-//			SFX.portal = getAudioClip(getCodeBase(), "res/sounds/activatePortal.au");
 			Images.load();
 			Sounds.load();
 		}
@@ -42,7 +46,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 		public void start(){
 			Thread th = new Thread(this);
 			th.start();
-			Sounds.play(Sounds.sound);
+//			Sounds.play(Sounds.sound);
 		}
 		
 		public void run(){
@@ -63,7 +67,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 		public void paint(Graphics g){
 			Render.update(g);
 			g.setColor(Color.BLUE);
-			g.fillRect(20,20,40,40);
+			g.fillRect(20,20,128,200);
 		}
 		
 		public void update (Graphics g){
