@@ -23,15 +23,19 @@ public class Player extends Entity {
 		currentImage = 0;
 		if(Keys.down && d){
 			ypos+= speed;
+			currentImage = 0 + tick;
 		}
 		if(Keys.up && u){
 			ypos-= speed;
+			currentImage = 6 + tick;
 		}
 		if(Keys.right && r){
 			xpos+= speed;
+			currentImage = 4 + tick;
 		}
 		if(Keys.left && l){
 			xpos-= speed;
+			currentImage = 2 + tick;
 		}
 		r = true;
 		l = true;

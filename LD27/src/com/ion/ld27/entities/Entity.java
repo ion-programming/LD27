@@ -15,6 +15,8 @@ public class Entity {
 	public String type;
 	public BufferedImage[] imgs;
 	public int currentImage;
+	public int timer = 0;
+	public int tick = 0;
 	
 	public boolean r = true;
 	public boolean l = true;
@@ -30,6 +32,16 @@ public class Entity {
 	}
 	
 	public void update(){
+		timer++;
+		if(timer > 10){
+			timer = 0;
+			if(tick > 0){
+				tick = 0;
+			}
+			else{
+				tick++;
+			}
+		}
 		ai();
 	}
 	

@@ -31,7 +31,7 @@ public class Images {
 		messageBorder = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/messageBorder.png"));
 		border = ImageHandler.all(messageBorder, 8, 1, 1);
 		player = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/player.png"));
-		playerTiles = ImageHandler.all(player, 1, 1, 1);
+		playerTiles = ImageHandler.all(player, 8, 1, 1);
 		map1 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map1.png"));
 		
 		item = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/items.png"));
