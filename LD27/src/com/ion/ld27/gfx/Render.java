@@ -16,10 +16,19 @@ public class Render {
 		for(int n = 0; n < Game.entities.size(); n++){
 			Game.entities.get(n).draw(g);
 		}
+		
+		if(Map.isUnderGround){
+			g.drawImage(Images.dark, 0, 0, null);
+			GPS.stat = true;
+		}
+		else{
+			GPS.stat = false;
+		}
 		TopBar.update(g);
 		HUD.update(g);
 		GPS.draw(g);
 		Journal.render(g);
+		
 //		Static.render(g);
 	}
 }

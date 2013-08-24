@@ -11,6 +11,8 @@ public class Map {
 	public static int[][][] underMap1;
 	public static int[][][] underMap2;
 	
+	public static boolean isUnderGround = false;
+	
 	public static void load(){
 		mainMap = MapLoader.load(Images.map1);
 	}

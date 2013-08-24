@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.ion.ld27.Game;
+
 
 
 public class Images {
@@ -22,6 +24,7 @@ public class Images {
 	public static BufferedImage item;
 	public static BufferedImage[] items;
 	public static BufferedImage end;
+	public static BufferedImage dark;
 	
 	
 	public static void load() throws IOException{
@@ -35,7 +38,7 @@ public class Images {
 		player = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/player.png"));
 		playerTiles = ImageHandler.all(player, 8, 1, 1);
 		map1 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map1.png"));
-		
+		dark = ImageHandler.resizeImage(ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/dark.png")), Game.width, Game.height);
 		item = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/items.png"));
 		items = ImageHandler.all(item, 8, 3, 1);
 		
