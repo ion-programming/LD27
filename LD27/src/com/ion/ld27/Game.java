@@ -15,9 +15,8 @@ import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
-import com.ion.ld27.hud.HUD;
 import com.ion.ld27.input.Keys;
-import com.ion.ld27.map.MapLoader;
+import com.ion.ld27.map.Map;
 import com.ion.ld27.sfx.Sounds;
 
 
@@ -40,14 +39,14 @@ public class Game extends Applet implements Runnable, KeyListener{
 			addKeyListener(this);
 			setSize(width, height);
 			setFocusable(true);
-			setBackground(Color.CYAN);
+			setBackground(Color.black);
 			try {
 				Images.load();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			Sounds.load();
-			HUD.storyText(new String[]{"Will it work?",  "We'll soon find out..."}, new int[]{2, 2}, true);
+			Map.load();
 		}
 		
 		

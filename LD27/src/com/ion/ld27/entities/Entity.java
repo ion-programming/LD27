@@ -21,7 +21,6 @@ public class Entity {
 	public boolean u = true;
 	public boolean d = true;
 	
-	
 	public void draw(Graphics g){
 		g.drawImage(imgs[currentImage], xpos, ypos, null);
 	}

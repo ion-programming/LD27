@@ -3,45 +3,38 @@ package com.ion.ld27.map;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
+import com.ion.ld27.Game;
+import com.ion.ld27.entities.Solid;
+
 
 public class MapLoader {
+	
+	public static int[][] rg = new int[][]{
+		new int[]{1, 20, 40, 60},
+		new int[]{1, 1, 1, 1, 20, 40, 60, 80}
+	};
 
-	public static int[][] load(BufferedImage mapImage){
-		int[][] map = new int[mapImage.getHeight()][mapImage.getWidth()];
+	public static int[][][] load(BufferedImage mapImage){
+		int[][][] map = new int[2][mapImage.getHeight()][mapImage.getWidth()];
 		
-		for(int x = 0; x < map.length; x++){
-			for(int y = 0; y < map[0].length; y++){
+		for(int y = 0; y < map[0].length; y++){
+			for(int x = 0; x < map[0][y].length; x++){
 				Color col = new Color(mapImage.getRGB(x, y));
-				if(compareColours(col, 0x00FF00)){
-					map[y][x] = 1;//grass
+				for(int n = 0; n < rg[0].length; n++){
+					if(rg[0][n] == col.getRed()){
+						map[0][y][x] = n;
+					}
 				}
-				if(compareColours(col, 0xFF0000)){
-					map[y][x] = 2;//dirt
+				for(int n = 0; n < rg[1].length; n++){
+					if(rg[1][n] == col.getGreen()){
+						map[1][y][x] = n;
+					}
 				}
-				if(compareColours(col, 0x0000FF)){
-					map[y][x] = 3;//stone
-				}
-				if(compareColours(col, 0xFF00FF)){
-					map[y][x] = 4;//rocks
-				}
-				if(compareColours(col, 0xFFFF00)){
-					map[y][x] = 5;//leaves
-				}
-				else{
-					map[y][x] = 0;
+				if(col.getBlue() == 20){
+					Game.entities.add(new Solid(x*64, y*64));
 				}
 			}
 		}
-		return null;	
-	}
-	
-	
-	public static boolean compareColours(Color one, int in){
-		boolean status = false;
-		Color two = new Color(in);
-		if(one.getRed() == two.getRed() && one.getGreen() == two.getGreen() && one.getBlue() == two.getBlue()){
-			status = true;
-		}
-		return status;
+		return map;	
 	}
 }
