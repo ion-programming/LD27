@@ -21,6 +21,8 @@ public class Images {
 	public static BufferedImage[] playerTiles;
 	public static BufferedImage item;
 	public static BufferedImage[] items;
+	public static BufferedImage end;
+	
 	
 	public static void load() throws IOException{
 		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/tiles.png"));
@@ -36,6 +38,9 @@ public class Images {
 		
 		item = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/items.png"));
 		items = ImageHandler.all(item, 8, 3, 1);
+		
+		end = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/end.png"));
+		end = ImageHandler.resizeImage(end, end.getWidth() * 2, end.getHeight() * 2);
 	}
 	
 }

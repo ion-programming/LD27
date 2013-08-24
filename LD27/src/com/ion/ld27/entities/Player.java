@@ -7,7 +7,7 @@ import com.ion.ld27.input.Keys;
 public class Player extends Entity {
 	
 	public Player(int x, int y){
-		health = 10;
+		health = 5;
 		healthRange = 10;
 		speed = 4;
 		imgs = Images.playerTiles;

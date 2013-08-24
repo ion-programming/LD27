@@ -38,6 +38,6 @@ public class Static {
 			}
 		}
 		
-		
+		g.drawImage(Images.end, 0, 0, null);
 	}
 }
