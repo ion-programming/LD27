@@ -1,6 +1,7 @@
 package com.ion.ld27.map;
 
 import com.ion.ld27.Game;
+import com.ion.ld27.entities.BombTrig;
 import com.ion.ld27.entities.Player;
 import com.ion.ld27.entities.items.Canteen;
 import com.ion.ld27.entities.items.CavePortal;
@@ -17,6 +18,7 @@ public class StageManager {
 	public static void initStage(int newStage){
 		if(newStage == 1){
 			stage = 1;
+			Map.isUnderGround = false;
 			Game.entities.clear();
 			Game.entities.add(new Player(768, 640));
 			Game.entities.add(new Stick(896, 896));
@@ -27,6 +29,7 @@ public class StageManager {
 		}
 		else if(newStage == 2){
 			stage = 2;
+			Map.isUnderGround = true;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 1024;
 			p.ypos = 3264;
@@ -40,6 +43,7 @@ public class StageManager {
 		}
 		else if(newStage == 3){
 			stage = 3;
+			Map.isUnderGround = false;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 2048;
 			p.ypos = 1152;
@@ -53,6 +57,7 @@ public class StageManager {
 		}
 		else if(newStage == 4){
 			stage = 4;
+			Map.isUnderGround = true;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 576;
 			p.ypos = 1984;
@@ -67,14 +72,16 @@ public class StageManager {
 		}
 		else if(newStage == 5){
 			stage = 5;
+			Map.isUnderGround = false;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 6912;
 			p.ypos = 2880;
 			Game.entities.clear();
 			Game.entities.add(p);
 			Game.entities.add(new JournalPage(11520, 2560, 6));
-			Game.entities.add(new JournalPage(7616, 2112, 7));
+			Game.entities.add(new JournalPage(7616, 768, 7));
 			Game.entities.add(new CavePortal(6912, 2944, false, false, false));
+			Game.entities.add(new BombTrig(8512, 2112));
 			Map.load();
 		}
 	}

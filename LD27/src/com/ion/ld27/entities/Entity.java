@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import com.ion.ld27.Game;
-import com.ion.ld27.entities.items.CavePortal;
 import com.ion.ld27.entities.mobs.Bear;
 import com.ion.ld27.entities.mobs.Rat;
 import com.ion.ld27.entities.mobs.Spider;
@@ -129,19 +128,6 @@ public class Entity {
 			if(xpos - ent.xpos - 1 < 64 && xpos - ent.xpos - 1 > 0){
 				nl = false;
 				hit = true;
-			}
-		}
-		if(isPlayer){
-			if(hit && ent.getClass() == CavePortal.class){
-				nd = true;
-				nu = true;
-				nr = true;
-				nl = true;
-				int e = Game.entities.indexOf(ent);
-				int d = Math.abs(Game.entities.get(e).xpos - xpos) + Math.abs(Game.entities.get(e).ypos - ypos);
-				if(d < 8){
-					//go through entrance
-				}
 			}
 		}
 		if(hit && punch == 1 && (ent.getClass() == Rat.class || ent.getClass() == Player.class || ent.getClass() == Bear.class || ent.getClass() == Spider.class || ent.getClass() == Tiger.class)){
