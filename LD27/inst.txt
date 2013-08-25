@@ -12,7 +12,7 @@ Controls:
 	D - Right
 	
 	L - GPS Light
-	Q - Toggle GPS Activity
+	J - Bring up journal
 	
 	
 	
