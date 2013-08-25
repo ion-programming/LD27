@@ -26,6 +26,7 @@ public class StageManager {
 			Map.load();
 		}
 		else if(newStage == 2){
+			stage = 2;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 1024;
 			p.ypos = 3264;
@@ -38,6 +39,7 @@ public class StageManager {
 			Map.load();
 		}
 		else if(newStage == 3){
+			stage = 3;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 2048;
 			p.ypos = 1152;
@@ -50,6 +52,7 @@ public class StageManager {
 			Map.load();
 		}
 		else if(newStage == 4){
+			stage = 4;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 576;
 			p.ypos = 1984;
@@ -63,6 +66,7 @@ public class StageManager {
 			Map.load();
 		}
 		else if(newStage == 5){
+			stage = 5;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 6912;
 			p.ypos = 2880;

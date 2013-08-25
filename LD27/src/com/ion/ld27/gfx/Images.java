@@ -12,6 +12,8 @@ import com.ion.ld27.Game;
 public class Images {
 	
 	public static BufferedImage map1;
+	public static BufferedImage map2;
+	public static BufferedImage map3;
 	public static BufferedImage tileImage;
 	public static BufferedImage gps;
 	public static BufferedImage[] tiles;
@@ -48,6 +50,8 @@ public class Images {
 		player = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/player.png"));
 		playerTiles = ImageHandler.all(player, 8, 1, 1);
 		map1 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map1.png"));
+		map2 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map2.png"));
+		map3 = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/map3.png"));
 		dark = ImageHandler.resizeImage(ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/dark.png")), Game.width, Game.height);
 		item = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/items.png"));
 		items = ImageHandler.all(item, 8, 3, 1);

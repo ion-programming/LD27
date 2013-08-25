@@ -81,7 +81,6 @@ public class Game extends Applet implements Runnable, KeyListener{
 				catch(InterruptedException ex){
 					ex.printStackTrace();
 				}
-				System.out.println("FPS: " + (int)(1000/((System.nanoTime() - time)/1000000)));
 				Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			}
 		}
