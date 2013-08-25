@@ -9,7 +9,7 @@ public class Player extends Entity {
 	public Player(int x, int y){
 		attack = 1;
 		health = 5;
-		healthRange = 10;
+		healthRange = 5;
 		speed = 4;
 		imgs = Images.playerTiles;
 		currentImage = 0;

@@ -5,10 +5,15 @@ import java.awt.image.BufferedImage;
 
 import com.ion.ld27.Game;
 import com.ion.ld27.entities.items.CavePortal;
+import com.ion.ld27.entities.mobs.Bear;
 import com.ion.ld27.entities.mobs.Rat;
+import com.ion.ld27.entities.mobs.Spider;
+import com.ion.ld27.entities.mobs.Tiger;
 
 public class Entity {
 
+	public static int baseHealth = 0;
+	public static int baseAttack = 0;
 	public int attack;
 	public int speed = 4;
 	public int xpos;
@@ -71,6 +76,9 @@ public class Entity {
 		boolean nl = true;
 		boolean inx = false;
 		boolean iny = false;
+		if(punch > 0){
+			punch--;
+		}
 		if(isPlayer && ent.getClass() == Rat.class){
 			if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 256){
 				ent.newPath = true;
@@ -120,14 +128,14 @@ public class Entity {
 				}
 			}
 		}
-		if(hit && punch == 1 && (ent.getClass() == Rat.class || ent.getClass() == Player.class)){
+		if(hit && punch == 1 && (ent.getClass() == Rat.class || ent.getClass() == Player.class || ent.getClass() == Bear.class || ent.getClass() == Spider.class || ent.getClass() == Tiger.class)){
 			if(!nd && (currentImage == 0 || currentImage == 1)){
 				ent.hurt(attack);
 			}
-			else if(!nu && (currentImage == 2 || currentImage == 3)){
+			else if(!nu && (currentImage == 6 || currentImage == 7)){
 				ent.hurt(attack);
 			}
-			else if(!nl && (currentImage == 6 || currentImage == 7)){
+			else if(!nl && (currentImage == 2 || currentImage == 3)){
 				ent.hurt(attack);
 			}
 			else if(!nr && (currentImage == 4 || currentImage == 5)){

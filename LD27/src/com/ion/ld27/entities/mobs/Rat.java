@@ -18,8 +18,9 @@ public class Rat extends Entity {
 	boolean down = false;
 	
 	public Rat(int x, int y){
-		health = 5;
-		healthRange = 5;
+		attack = baseAttack + 1;
+		healthRange = baseHealth + 5;
+		health = baseHealth + 5;
 		speed = 2;
 		imgs = Images.ratTiles;
 		currentImage = 0;
@@ -27,7 +28,6 @@ public class Rat extends Entity {
 		ypos = y;
 		type = "rat";
 	}
-
 	
 	@Override
 	public void ai(){
