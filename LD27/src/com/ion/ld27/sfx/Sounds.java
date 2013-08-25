@@ -13,10 +13,15 @@ public class Sounds{
 	public static void load(){
 		try{
 			sound = new Media(Sounds.class.getClassLoader().getResource("res/whynot.mp3").toString());
+			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb1.mp3").toString()));
+			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb2.mp3").toString()));
+			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb3.mp3").toString()));
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		
+		
 	}
 	
 	public static void update(){
