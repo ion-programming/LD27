@@ -12,8 +12,8 @@ import com.ion.ld27.entities.mobs.Tiger;
 
 public class Entity {
 
-	public static int baseHealth = 1;
-	public static int baseAttack = 1;
+	public static double baseHealth = 1;
+	public static double baseAttack = 1;
 	public int attack;
 	public int speed = 4;
 	public int xpos;
@@ -38,7 +38,6 @@ public class Entity {
 		if(ypos - Game.entities.get(0).ypos + Game.height/2 - 32 > -64 && ypos - Game.entities.get(0).ypos + Game.height/2 - 32 < Game.height){
 			if(xpos - Game.entities.get(0).xpos + Game.width/2 - 32 >  -64 && xpos - Game.entities.get(0).xpos + Game.width/2 - 32 < Game.width){
 				if(getClass() == Bear.class || getClass() == Rat.class || getClass() == Spider.class || getClass() == Tiger.class){
-					
 					int WIDTH = imgs[0].getWidth();
 					int gn = (WIDTH / healthRange) * health;
 					int h = 3;
@@ -80,10 +79,60 @@ public class Entity {
 	
 	public void destroy(){
 		int e = Game.entities.indexOf(this);
-		Game.entities.remove(e);
+		if(e >= 0){
+			Game.entities.remove(e);
+		}
 	}
 	public void collideWith(){
-		
+	}
+	
+	public void newMode(int mode, int oldMode){
+		if(getClass() == Bear.class || getClass() == Rat.class || getClass() == Spider.class || getClass() == Tiger.class){
+			if(oldMode == 1){
+				healthRange--;
+				health--;
+				attack-= 2;
+			}
+			else if(oldMode == 2){
+				healthRange-= 6;
+				health-= 6;	
+			}
+			else if(oldMode == 3){
+				attack-= 3;
+			}
+			else if(oldMode == 4){
+				health++;
+				healthRange++;
+				attack++;
+			}
+			else if(oldMode == 5){
+				health++;
+				healthRange++;
+				attack-= 4;
+			}
+			if(mode == 1){
+				healthRange++;
+				health++;
+				attack+= 2;
+			}
+			else if(mode == 2){
+				healthRange+= 6;
+				health+= 6;	
+			}
+			else if(mode == 3){
+				attack+= 3;
+			}
+			else if(mode == 4){
+				health--;
+				healthRange--;
+				attack--;
+			}
+			else if(mode == 5){
+				health--;
+				healthRange--;
+				attack+= 4;
+			}
+		}
 	}
 	
 	public void check(Entity ent, boolean isPlayer){

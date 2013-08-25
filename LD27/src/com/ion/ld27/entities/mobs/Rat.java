@@ -18,9 +18,9 @@ public class Rat extends Entity {
 	boolean down = false;
 	
 	public Rat(int x, int y){
-		attack = baseAttack*1;
-		healthRange = baseHealth*4;
-		health = baseHealth*4;
+		attack = (int) (baseAttack*1);
+		healthRange = (int) (baseHealth*4);
+		health = (int) (baseHealth*4);
 		speed = 2;
 		imgs = Images.ratTiles;
 		currentImage = 0;

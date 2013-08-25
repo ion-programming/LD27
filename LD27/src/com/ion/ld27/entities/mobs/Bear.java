@@ -18,9 +18,9 @@ public class Bear extends Entity {
 	boolean down = false;
 	
 	public Bear(int x, int y){
-		attack = baseAttack + 3;
-		healthRange = baseHealth + 7;
-		health = baseHealth + 7;
+		attack = (int) (baseAttack + 3);
+		healthRange = (int) (baseHealth + 7);
+		health = (int) (baseHealth + 7);
 		speed = 2;
 		imgs = Images.bearTiles;
 		currentImage = 0;

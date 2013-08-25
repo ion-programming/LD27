@@ -18,9 +18,9 @@ public class Spider extends Entity {
 	boolean down = false;
 	
 	public Spider(int x, int y){
-		attack = baseAttack*2;
-		healthRange = baseHealth*3;
-		health = baseHealth*3;
+		attack = (int) (baseAttack*2);
+		healthRange = (int) (baseHealth*3);
+		health = (int) (baseHealth*3);
 		speed = 4;
 		imgs = Images.spiderTiles;
 		currentImage = 0;

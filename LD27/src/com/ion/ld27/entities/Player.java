@@ -9,8 +9,8 @@ public class Player extends Entity {
 	
 	public Player(int x, int y){
 		attack = 1;
-		health = 10;
-		healthRange = 10;
+		health = 50;
+		healthRange = 50;
 		speed = 4;
 		imgs = Images.playerTiles;
 		currentImage = 0;

@@ -18,10 +18,10 @@ public class Tiger extends Entity {
 	boolean down = false;
 	
 	public Tiger(int x, int y){
-		attack = baseAttack*4;
-		healthRange = baseHealth*6;
-		health = baseHealth*6;
-		speed = 8;
+		attack = (int) (baseAttack*3);
+		healthRange = (int) (baseHealth*6);
+		health = (int) (baseHealth*6);
+		speed = 4;
 		imgs = Images.tigerTiles;
 		currentImage = 0;
 		xpos = x;

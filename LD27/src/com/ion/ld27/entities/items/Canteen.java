@@ -25,8 +25,8 @@ public class Canteen extends Entity{
 	@Override
 	public void collideWith(){
 		HUD.storyText(new String[]{"Canteen found!", "Your health increases."}, new int[]{2, 2}, true);
-		Game.entities.get(0).healthRange+= 2;
-		Game.entities.get(0).health+= 2;
+		Game.entities.get(0).healthRange+= 10;
+		Game.entities.get(0).health+= 10;
 		GPS.startFlashing = true;
 		destroy();
 	}

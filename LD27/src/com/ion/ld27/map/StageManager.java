@@ -2,6 +2,7 @@ package com.ion.ld27.map;
 
 import com.ion.ld27.Game;
 import com.ion.ld27.entities.BombTrig;
+import com.ion.ld27.entities.Entity;
 import com.ion.ld27.entities.Player;
 import com.ion.ld27.entities.items.Canteen;
 import com.ion.ld27.entities.items.CavePortal;
@@ -10,6 +11,7 @@ import com.ion.ld27.entities.items.Lantern;
 import com.ion.ld27.entities.items.Machete;
 import com.ion.ld27.entities.items.Pipe;
 import com.ion.ld27.entities.items.Stick;
+import com.ion.ld27.entities.mobs.Tiger;
 import com.ion.ld27.hud.GPS;
 
 public class StageManager {
@@ -28,6 +30,7 @@ public class StageManager {
 			Game.entities.add(new JournalPage(1280, 1600, 1));
 			Game.entities.add(new Lantern(1728, 3200));
 			Game.entities.add(new CavePortal(1728, 4096, false, true, true));
+			Game.entities.add(new Tiger(900, 640));
 			Map.load();
 		}
 		else if(newStage == 2){
@@ -46,6 +49,8 @@ public class StageManager {
 		}
 		else if(newStage == 3){
 			stage = 3;
+			Entity.baseAttack = 1.5;
+			Entity.baseHealth = 1.5;
 			Map.isUnderGround = false;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 2048;
@@ -77,6 +82,8 @@ public class StageManager {
 		}
 		else if(newStage == 5){
 			stage = 5;
+			Entity.baseAttack = 2;
+			Entity.baseHealth = 2;
 			Map.isUnderGround = false;
 			Player p = (Player)Game.entities.get(0);
 			p.xpos = 6912;
