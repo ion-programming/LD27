@@ -10,7 +10,7 @@ import com.ion.ld27.entities.Solid;
 public class MapLoader {
 	
 	public static int[][] rg = new int[][]{
-		new int[]{1, 20, 40, 60},
+		new int[]{1, 20, 40, 60, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 80, 100},
 		new int[]{1, 1, 1, 1, 20, 40, 60, 80}
 	};
 

@@ -4,15 +4,19 @@ import java.awt.image.BufferedImage;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
-import com.ion.ld27.map.Map;
+import com.ion.ld27.map.StageManager;
 
 public class CavePortal extends Entity{
 
 	public int cavePos = 0; //0 above 1 below
 	public int start = 0; //0 start 1 end
+	boolean works= true;
 	
-	public CavePortal(int x, int y, boolean underground, boolean startb){
+	public CavePortal(int x, int y, boolean underground, boolean startb, boolean w){
 
+		if(!w){
+			works = false;
+		}
 		if(underground){
 			cavePos = 1;
 		}
@@ -52,12 +56,9 @@ public class CavePortal extends Entity{
 		
 	@Override
 	public void collideWith(){
-			if(Map.isUnderGround){
-				Map.isUnderGround = false;
-			}
-			else{
-				Map.isUnderGround = true;
-			}
+		if(works){
+			StageManager.initStage(StageManager.stage + 1);
+		}
 			
 			
 	}

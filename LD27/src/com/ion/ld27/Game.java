@@ -13,15 +13,12 @@ import javafx.embed.swing.JFXPanel;
 
 import com.ion.ld27.astar.Astar;
 import com.ion.ld27.entities.Entity;
-import com.ion.ld27.entities.Player;
-import com.ion.ld27.entities.items.JournalPage;
-import com.ion.ld27.entities.mobs.Tiger;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
 import com.ion.ld27.hud.Journal;
 import com.ion.ld27.input.Keys;
-import com.ion.ld27.map.Map;
+import com.ion.ld27.map.StageManager;
 import com.ion.ld27.sfx.Sounds;
 
 
@@ -57,11 +54,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 				e.printStackTrace();
 			}
 			Sounds.load();
-			entities.add(new Player(getWidth()/2 - 32, getHeight()/2 - 32));
-//			entities.add(new Rat(700, 500));
-			entities.add(new Tiger(700, 500));
-			Map.load();
-			entities.add(new JournalPage(512, 512, 1));
+			StageManager.initStage(1);
 		}
 		
 		
@@ -69,7 +62,6 @@ public class Game extends Applet implements Runnable, KeyListener{
 			astar.start();
 			Thread th = new Thread(this);
 			th.start();
-//			Sounds.play(Sounds.sound);
 		}
 		
 		public void run(){
