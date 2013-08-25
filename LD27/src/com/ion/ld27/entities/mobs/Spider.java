@@ -29,7 +29,6 @@ public class Spider extends Entity {
 		type = "rat";
 	}
 
-	
 	@Override
 	public void ai(){
 		if(canPunch > 0){

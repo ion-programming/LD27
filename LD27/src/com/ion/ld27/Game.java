@@ -15,7 +15,7 @@ import com.ion.ld27.astar.Astar;
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.entities.Player;
 import com.ion.ld27.entities.items.JournalPage;
-import com.ion.ld27.entities.mobs.Rat;
+import com.ion.ld27.entities.mobs.Tiger;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.gfx.Render;
 import com.ion.ld27.gfx.Update;
@@ -58,7 +58,8 @@ public class Game extends Applet implements Runnable, KeyListener{
 			}
 			Sounds.load();
 			entities.add(new Player(getWidth()/2 - 32, getHeight()/2 - 32));
-			entities.add(new Rat(700, 500));
+//			entities.add(new Rat(700, 500));
+			entities.add(new Tiger(700, 500));
 			Map.load();
 			entities.add(new JournalPage(512, 512, 1));
 		}

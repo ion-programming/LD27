@@ -8,7 +8,7 @@ import javafx.scene.media.Media;
 public class SoundManager {
 	
 	static Random r = new Random();
-	public static boolean farBombsPlaying = true;
+	public static boolean farBombsPlaying = false;
 	static int minDelay = 1;
 	static int maxDelay = 5; 
 	static boolean farBomb = false;
@@ -34,9 +34,5 @@ public class SoundManager {
 			}
 			
 		}
-		
-		
-		
-		
 	}
 }

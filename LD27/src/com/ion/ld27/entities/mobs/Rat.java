@@ -113,6 +113,7 @@ public class Rat extends Entity {
 		if(timer >= 20){
 			timer = 0;
 		}
+//		imgs();
 		r = true;
 		l = true;
 		u = true;
@@ -122,41 +123,20 @@ public class Rat extends Entity {
 				check(Game.entities.get(n), false);
 			}
 		}
-		imgs();
 	}
 	
-	public void imgs(){
-		timer++;
-		if(timer < 10){
-			if(left && l){
-				currentImage = 2;
-			}
-			if(right && r){
-				currentImage = 4;
-			}
-			if(up && u){
-				currentImage = 6;
-			}
-			if(down && d){
-				currentImage = 0;
-			}
-		}
-		else if(timer < 20){
-			if(left && l){
-				currentImage = 3;
-			}
-			if(right && r){
-				currentImage = 5;
-			}
-			if(up && u){
-				currentImage = 7;
-			}
-			if(down && d){
-				currentImage = 1;
-			}
-		}
-		else{
-			timer = -1;
-		}
-	}
+//	public void imgs(){
+//		if(l){
+//			currentImage = 2 + tick;
+//		}
+//		if(r){
+//			currentImage = 4 + tick;
+//		}
+//		if(u){
+//			currentImage = 6 + tick;
+//		}
+//		if(d){
+//			currentImage = 0 + tick;
+//		}
+//	}
 }

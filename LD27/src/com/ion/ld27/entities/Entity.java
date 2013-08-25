@@ -95,7 +95,7 @@ public class Entity {
 		boolean nl = true;
 		boolean inx = false;
 		boolean iny = false;
-		if(isPlayer && ent.getClass() == Rat.class){
+		if(isPlayer && (ent.getClass() == Rat.class || ent.getClass() == Bear.class || ent.getClass() == Tiger.class || ent.getClass() == Spider.class)){
 			if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 512){
 				ent.newPath = true;
 			}

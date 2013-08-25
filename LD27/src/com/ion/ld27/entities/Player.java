@@ -3,6 +3,7 @@ package com.ion.ld27.entities;
 import com.ion.ld27.Game;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.input.Keys;
+import com.ion.ld27.map.StageManager;
 
 public class Player extends Entity {
 	
@@ -19,6 +20,10 @@ public class Player extends Entity {
 	}
 
 	
+	@Override
+	public void destroy(){
+		StageManager.end = true;
+	}
 	@Override
 	public void ai(){
 		if(Keys.down){
@@ -70,33 +75,17 @@ public class Player extends Entity {
 	}
 	
 	public void imgs(){
-		if(tick == 1){
-			if(Keys.left && l){
-				currentImage = 2;
-			}
-			if(Keys.right && r){
-				currentImage = 4;
-			}
-			if(Keys.up && u){
-				currentImage = 6;
-			}
-			if(Keys.down && d){
-				currentImage = 0;
-			}
+		if(Keys.left && l){
+			currentImage = 2 + tick;
 		}
-		else{
-			if(Keys.left && l){
-				currentImage = 3;
-			}
-			if(Keys.right && r){
-				currentImage = 5;
-			}
-			if(Keys.up && u){
-				currentImage = 7;
-			}
-			if(Keys.down && d){
-				currentImage = 1;
-			}
+		if(Keys.right && r){
+			currentImage = 4 + tick;
+		}
+		if(Keys.up && u){
+			currentImage = 6 + tick;
+		}
+		if(Keys.down && d){
+			currentImage = 0 + tick;
 		}
 	}
 }
