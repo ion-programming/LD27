@@ -2,6 +2,7 @@ package com.ion.ld27.entities.items;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.GPS;
 import com.ion.ld27.map.StageManager;
 
 public class CavePortal extends Entity{
@@ -58,6 +59,7 @@ public class CavePortal extends Entity{
 	public void collideWith(){
 		if(works){
 			StageManager.initStage(StageManager.stage + 1);
+			GPS.startFlashing = true;
 		}
 			
 	}	

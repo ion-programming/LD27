@@ -10,7 +10,7 @@ import com.ion.ld27.sfx.Sounds;
 public class Update {
 	public static void update(){
 		Sounds.update();
-		GPS.update(Game.entities.get(0).xpos, Game.entities.get(0).ypos, 64, 64);
+		GPS.update(Game.entities.get(0).xpos, Game.entities.get(0).ypos, GPS.targetx, GPS.targety);
 		for(int n = 0; n < Game.entities.size(); n++){
 			Game.entities.get(n).update();
 		}

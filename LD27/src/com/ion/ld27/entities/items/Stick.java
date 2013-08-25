@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import com.ion.ld27.Game;
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.GPS;
 import com.ion.ld27.hud.HUD;
 
 public class Stick extends Entity{
@@ -25,6 +26,9 @@ public class Stick extends Entity{
 	public void collideWith(){
 		HUD.storyText(new String[]{"Stick found!", "Your attack power increases."}, new int[]{2, 2}, true);
 		Game.entities.get(0).attack++;
+		GPS.targetx = 1280;
+		GPS.targety = 1600;
+		GPS.startFlashing = true;
 		destroy();
 	}
 }

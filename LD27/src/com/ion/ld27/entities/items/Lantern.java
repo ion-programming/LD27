@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
+import com.ion.ld27.hud.GPS;
 import com.ion.ld27.hud.HUD;
 import com.ion.ld27.map.StageManager;
 
@@ -24,6 +25,8 @@ public class Lantern extends Entity{
 	@Override
 	public void collideWith(){
 		StageManager.hasLantern = true;
+		GPS.targetx = 1728;
+		GPS.targety = 4096;
 		HUD.storyText(new String[]{"Lantern found!"}, new int[]{2}, true);
 		destroy();
 	}

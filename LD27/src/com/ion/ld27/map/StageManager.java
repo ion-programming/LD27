@@ -10,6 +10,7 @@ import com.ion.ld27.entities.items.Lantern;
 import com.ion.ld27.entities.items.Machete;
 import com.ion.ld27.entities.items.Pipe;
 import com.ion.ld27.entities.items.Stick;
+import com.ion.ld27.hud.GPS;
 
 public class StageManager {
 	public static boolean hasLantern = false;
@@ -20,6 +21,8 @@ public class StageManager {
 			stage = 1;
 			Map.isUnderGround = false;
 			Game.entities.clear();
+			GPS.targetx = 896;
+			GPS.targety = 896;
 			Game.entities.add(new Player(768, 640));
 			Game.entities.add(new Stick(896, 896));
 			Game.entities.add(new JournalPage(1280, 1600, 1));
@@ -49,6 +52,8 @@ public class StageManager {
 			p.ypos = 1152;
 			Game.entities.clear();
 			Game.entities.add(p);
+			GPS.targetx = 2240;
+			GPS.targety = 704;
 			Game.entities.add(new JournalPage(2240, 704, 3));	
 			Game.entities.add(new Machete(2176, 2048));
 			Game.entities.add(new CavePortal(2048, 1216, false, false, false));
@@ -78,6 +83,8 @@ public class StageManager {
 			p.ypos = 2880;
 			Game.entities.clear();
 			Game.entities.add(p);
+			GPS.targetx = 11520;
+			GPS.targety = 2560;
 			Game.entities.add(new JournalPage(11520, 2560, 6));
 			Game.entities.add(new JournalPage(7616, 768, 7));
 			Game.entities.add(new CavePortal(6912, 2944, false, false, false));

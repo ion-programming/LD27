@@ -20,6 +20,10 @@ public class GPS {
 	public static Color bkgrndly = new Color(0xB2AE2B);
 	public static Color bkgrndln = new Color(0x637041);
 	
+	public static int targetx = 0;
+	public static int targety = 0;
+	
+	
 	public static boolean stat = false;
 	static Random r = new Random();
 	
