@@ -1,7 +1,5 @@
 package com.ion.ld27.entities.items;
 
-import java.awt.image.BufferedImage;
-
 import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.map.StageManager;
@@ -30,10 +28,12 @@ public class CavePortal extends Entity{
 		else{
 			start = 1;
 		}
-		imgs = new BufferedImage[] {Images.caveTiles[0]};
+		imgs = Images.caveTiles;
 		currentImage = 0;
 		xpos = x;
 		ypos = y;
+		health = 5;
+		healthRange = 5;
 		type = "cavePortal";
 	}
 		
@@ -41,16 +41,16 @@ public class CavePortal extends Entity{
 	@Override
 	public void ai(){
 		if(cavePos == 0 && start == 0){
-			currentImage = 1;
+			currentImage = 0;
 		}
 		else if(cavePos == 0 && start == 1){
-			currentImage = 2;
+			currentImage = 1;
 		}
 		else if(cavePos == 1 && start == 0){
-			currentImage = 3;
+			currentImage = 2;
 		}
 		else if(cavePos == 1 && start == 1){
-			currentImage = 4;
+			currentImage = 3;
 		}
 	}
 		
@@ -60,6 +60,5 @@ public class CavePortal extends Entity{
 			StageManager.initStage(StageManager.stage + 1);
 		}
 			
-			
-	}
+	}	
 }

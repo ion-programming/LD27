@@ -22,7 +22,7 @@ public class StageManager {
 			Game.entities.add(new Stick(896, 896));
 			Game.entities.add(new JournalPage(1280, 1600, 1));
 			Game.entities.add(new Lantern(1728, 3200));
-			Game.entities.add(new CavePortal(1728, 4224, false, true, true));
+			Game.entities.add(new CavePortal(1728, 4096, false, true, true));
 			Map.load();
 		}
 		else if(newStage == 2){
