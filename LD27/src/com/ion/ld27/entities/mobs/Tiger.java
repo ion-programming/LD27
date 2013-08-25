@@ -7,7 +7,7 @@ import com.ion.ld27.entities.Entity;
 import com.ion.ld27.gfx.Images;
 import com.ion.ld27.map.Map;
 
-public class Rat extends Entity {
+public class Tiger extends Entity {
 	int timer = 0;
 	int pathTimer = 0;
 	ArrayList<Integer> path = new ArrayList<Integer>();
@@ -17,11 +17,11 @@ public class Rat extends Entity {
 	boolean up = false;
 	boolean down = false;
 	
-	public Rat(int x, int y){
+	public Tiger(int x, int y){
 		health = 5;
 		healthRange = 5;
 		speed = 2;
-		imgs = Images.ratTiles;
+		imgs = Images.tigerTiles;
 		currentImage = 0;
 		xpos = x;
 		ypos = y;
