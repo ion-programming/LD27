@@ -18,9 +18,9 @@ public class Rat extends Entity {
 	boolean down = false;
 	
 	public Rat(int x, int y){
-		attack = baseAttack + 1;
-		healthRange = baseHealth + 5;
-		health = baseHealth + 5;
+		attack = baseAttack*1;
+		healthRange = baseHealth*4;
+		health = baseHealth*4;
 		speed = 2;
 		imgs = Images.ratTiles;
 		currentImage = 0;
@@ -121,6 +121,42 @@ public class Rat extends Entity {
 			if(!Game.entities.get(n).equals(this)){
 				check(Game.entities.get(n), false);
 			}
+		}
+		imgs();
+	}
+	
+	public void imgs(){
+		timer++;
+		if(timer < 10){
+			if(left && l){
+				currentImage = 2;
+			}
+			if(right && r){
+				currentImage = 4;
+			}
+			if(up && u){
+				currentImage = 6;
+			}
+			if(down && d){
+				currentImage = 0;
+			}
+		}
+		else if(timer < 20){
+			if(left && l){
+				currentImage = 3;
+			}
+			if(right && r){
+				currentImage = 5;
+			}
+			if(up && u){
+				currentImage = 7;
+			}
+			if(down && d){
+				currentImage = 1;
+			}
+		}
+		else{
+			timer = -1;
 		}
 	}
 }

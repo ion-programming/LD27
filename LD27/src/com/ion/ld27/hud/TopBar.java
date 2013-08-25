@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import com.ion.ld27.Game;
-import com.ion.ld27.entities.Entity;
 
 public class TopBar {
 
@@ -17,7 +16,7 @@ public class TopBar {
 		int WIDTH = 400;
 		int s = Game.width / 2 - WIDTH / 2;
 		
-		gn = (WIDTH / (Game.entities.get(0).healthRange + Entity.baseHealth)) * Game.entities.get(0).health;
+		gn = (WIDTH /Game.entities.get(0).healthRange) * Game.entities.get(0).health;
 		
 		g.setColor(new Color(0x00FF00));
 		g.fillRect(s, 5, gn, h);

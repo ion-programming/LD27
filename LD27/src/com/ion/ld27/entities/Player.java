@@ -8,8 +8,8 @@ public class Player extends Entity {
 	
 	public Player(int x, int y){
 		attack = 1;
-		health = 5;
-		healthRange = 5;
+		health = 10;
+		healthRange = 10;
 		speed = 4;
 		imgs = Images.playerTiles;
 		currentImage = 0;
@@ -21,23 +21,43 @@ public class Player extends Entity {
 	
 	@Override
 	public void ai(){
-		currentImage = 0;
-		if(Keys.down && d){
-			ypos+= speed;
-			currentImage = 0 + tick;
+		if(Keys.down){
+			if(d){
+				ypos+= speed;
+				currentImage = 0 + tick;
+			}
+			else{
+				currentImage = 0;
+			}
 		}
-		if(Keys.up && u){
-			ypos-= speed;
-			currentImage = 6 + tick;
+		if(Keys.up){
+			if(u){
+				ypos-= speed;
+				currentImage = 6 + tick;
+			}
+			else{
+				currentImage = 6;
+			}
 		}
-		if(Keys.right && r){
-			xpos+= speed;
-			currentImage = 4 + tick;
+		if(Keys.right){
+			if(r){
+				xpos+= speed;
+				currentImage = 4 + tick;
+			}
+			else{
+				currentImage = 4;
+			}
 		}
-		if(Keys.left && l){
-			xpos-= speed;
-			currentImage = 2 + tick;
+		if(Keys.left){
+			if(l){
+				xpos-= speed;
+				currentImage = 2 + tick;
+			}
+			else{
+				currentImage = 2;
+			}
 		}
+		imgs();
 		r = true;
 		l = true;
 		u = true;
@@ -45,6 +65,37 @@ public class Player extends Entity {
 		for(int n = 0; n < Game.entities.size(); n++){
 			if(!Game.entities.get(n).equals(this)){
 				check(Game.entities.get(n), true);
+			}
+		}
+	}
+	
+	public void imgs(){
+		if(tick == 1){
+			if(Keys.left && l){
+				currentImage = 2;
+			}
+			if(Keys.right && r){
+				currentImage = 4;
+			}
+			if(Keys.up && u){
+				currentImage = 6;
+			}
+			if(Keys.down && d){
+				currentImage = 0;
+			}
+		}
+		else{
+			if(Keys.left && l){
+				currentImage = 3;
+			}
+			if(Keys.right && r){
+				currentImage = 5;
+			}
+			if(Keys.up && u){
+				currentImage = 7;
+			}
+			if(Keys.down && d){
+				currentImage = 1;
 			}
 		}
 	}

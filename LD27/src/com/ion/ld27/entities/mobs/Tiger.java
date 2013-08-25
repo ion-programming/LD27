@@ -18,16 +18,16 @@ public class Tiger extends Entity {
 	boolean down = false;
 	
 	public Tiger(int x, int y){
-		health = 5;
-		healthRange = 5;
-		speed = 2;
+		attack = baseAttack*4;
+		healthRange = baseHealth*6;
+		health = baseHealth*6;
+		speed = 8;
 		imgs = Images.tigerTiles;
 		currentImage = 0;
 		xpos = x;
 		ypos = y;
 		type = "rat";
 	}
-
 	
 	@Override
 	public void ai(){

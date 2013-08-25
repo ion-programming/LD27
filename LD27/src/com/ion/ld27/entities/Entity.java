@@ -13,8 +13,8 @@ import com.ion.ld27.entities.mobs.Tiger;
 
 public class Entity {
 
-	public static int baseHealth = 0;
-	public static int baseAttack = 0;
+	public static int baseHealth = 1;
+	public static int baseAttack = 1;
 	public int attack;
 	public int speed = 4;
 	public int xpos;
@@ -28,7 +28,7 @@ public class Entity {
 	public int tick = 0;
 	public boolean newPath = false;
 	public int punch = 0;
-	public int canPunch = 0;;
+	public int canPunch = 0;
 	
 	public boolean r = true;
 	public boolean l = true;
@@ -51,6 +51,9 @@ public class Entity {
 				g.drawImage(imgs[currentImage], xpos - Game.entities.get(0).xpos + Game.width/2 - 32, ypos - Game.entities.get(0).ypos + Game.height/2 - 32, null);
 			}
 		}
+		if(punch > 0){
+			punch--;
+		}
 	}
 	
 	public void update(){
@@ -64,11 +67,16 @@ public class Entity {
 				tick++;
 			}
 		}
+		else if(timer >= 20){
+			timer = 0;
+		}
 		ai();
+		if(health <= 0){
+			destroy();
+		}
 	}
 	
 	public void ai(){
-		
 	}
 	
 	public void destroy(){
@@ -87,15 +95,12 @@ public class Entity {
 		boolean nl = true;
 		boolean inx = false;
 		boolean iny = false;
-		if(punch > 0){
-			punch--;
-		}
 		if(isPlayer && ent.getClass() == Rat.class){
-			if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 256){
+			if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 512){
 				ent.newPath = true;
 			}
 			if(ent.canPunch == 0){
-				if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 64){
+				if(Math.abs(xpos - ent.xpos) + Math.abs(ypos - ent.ypos) <= 128){
 					ent.punch();
 				}
 			}

@@ -2,6 +2,7 @@ package com.ion.ld27.input;
 
 import java.awt.event.KeyEvent;
 
+import com.ion.ld27.Game;
 import com.ion.ld27.hud.GPS;
 import com.ion.ld27.hud.Journal;
 
@@ -11,6 +12,7 @@ public class Keys {
 	public static boolean down = false;
 	public static boolean left = false;
 	public static boolean right = false;
+	public static boolean canPunch = true;
 	
 	public static void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_W){
@@ -66,6 +68,10 @@ public class Keys {
 			}
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_SPACE && canPunch){
+			Game.entities.get(0).punch();
+			canPunch = false;
+		}
 	}
 
 
@@ -82,7 +88,9 @@ public class Keys {
 		if(e.getKeyCode() == KeyEvent.VK_D){
 			right = false;
 		}
-	
+		if(e.getKeyCode() == KeyEvent.VK_SPACE){
+			canPunch = true;
+		}
 	}
 
 
