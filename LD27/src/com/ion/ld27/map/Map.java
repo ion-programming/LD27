@@ -1,6 +1,7 @@
 package com.ion.ld27.map;
 
 import java.awt.Graphics;
+import java.util.Random;
 
 import com.ion.ld27.Game;
 import com.ion.ld27.gfx.Images;
@@ -12,6 +13,8 @@ public class Map {
 	public static int[][][] underMap2;
 	
 	public static boolean isUnderGround = false;
+	
+	public static Random random = new Random();
 	
 	public static void load(){
 		mainMap = MapLoader.load(Images.map1);
