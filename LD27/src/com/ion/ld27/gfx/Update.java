@@ -12,7 +12,11 @@ public class Update {
 		Sounds.update();
 		GPS.update(Game.entities.get(0).xpos, Game.entities.get(0).ypos, GPS.targetx, GPS.targety);
 		for(int n = 0; n < Game.entities.size(); n++){
-			Game.entities.get(n).update();
+			if(Math.abs(Game.entities.get(n).ypos - Game.entities.get(0).ypos) < 64*30){
+				if(Math.abs(Game.entities.get(n).xpos - Game.entities.get(0).xpos) < 64*30){
+					Game.entities.get(n).update();
+				}
+			}
 		}
 		SoundManager.update();
 	}
