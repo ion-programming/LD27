@@ -11,7 +11,7 @@ import com.ion.ld27.entities.items.Lantern;
 import com.ion.ld27.entities.items.Machete;
 import com.ion.ld27.entities.items.Pipe;
 import com.ion.ld27.entities.items.Stick;
-import com.ion.ld27.entities.mobs.Tiger;
+import com.ion.ld27.entities.mobs.Bear;
 import com.ion.ld27.hud.GPS;
 
 public class StageManager {
@@ -30,7 +30,7 @@ public class StageManager {
 			Game.entities.add(new JournalPage(1280, 1600, 1));
 			Game.entities.add(new Lantern(1728, 3200));
 			Game.entities.add(new CavePortal(1728, 4096, false, true, true));
-			Game.entities.add(new Tiger(900, 640));
+			Game.entities.add(new Bear(900, 640));
 			Map.load();
 		}
 		else if(newStage == 2){
