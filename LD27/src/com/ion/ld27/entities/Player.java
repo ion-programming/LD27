@@ -22,6 +22,7 @@ public class Player extends Entity {
 	
 	@Override
 	public void destroy(){
+		health = healthRange;
 		StageManager.initStage(StageManager.stage);
 	}
 	@Override
