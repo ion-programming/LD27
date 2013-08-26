@@ -12,12 +12,14 @@ import com.ion.ld27.entities.items.Machete;
 import com.ion.ld27.entities.items.Pipe;
 import com.ion.ld27.entities.items.Stick;
 import com.ion.ld27.hud.GPS;
+import com.ion.ld27.hud.Journal;
 
 public class StageManager {
 	public static boolean hasLantern = false;
 	public static boolean end = false;
 	public static int stage = 1;
 	public static void initStage(int newStage){
+		Journal.show = false;
 		if(newStage == 1){
 			stage = 1;
 			Map.isUnderGround = false;
