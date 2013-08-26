@@ -11,6 +11,8 @@ Controls:
 	A - Left
 	D - Right
 	
+	SPACE - Hit (make sure you are pointing the right direction)
+	
 	L - GPS Light
 	J - Bring up journal
 	
