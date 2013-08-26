@@ -40,7 +40,10 @@ public class Entity {
 			if(xpos - Game.entities.get(0).xpos + Game.width/2 - 32 >  -64 && xpos - Game.entities.get(0).xpos + Game.width/2 - 32 < Game.width){
 				if(getClass() == Bear.class || getClass() == Rat.class || getClass() == Spider.class || getClass() == Tiger.class){
 					int WIDTH = imgs[0].getWidth();
-					int gn = (WIDTH / healthRange) * health;
+					int gn = 0;
+					if(healthRange > 0){
+						gn = (WIDTH / healthRange) * health;
+					}
 					int h = 3;
 					g.setColor(new Color(0x00FF00));
 					g.fillRect(xpos - Game.entities.get(0).xpos + Game.width/2 - 32, ypos - Game.entities.get(0).ypos + Game.height/2 - 32 - 7, gn, h);
