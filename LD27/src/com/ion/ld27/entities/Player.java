@@ -6,7 +6,7 @@ import com.ion.ld27.input.Keys;
 import com.ion.ld27.map.StageManager;
 
 public class Player extends Entity {
-	
+	int regentime = 0;
 	public Player(int x, int y){
 		attack = 1;
 		health = 50;
@@ -26,6 +26,15 @@ public class Player extends Entity {
 	}
 	@Override
 	public void ai(){
+		if(tick == 1){
+			regentime += 2;
+		}
+		if(regentime >= 70){
+			regentime = 0;
+			if(health < healthRange){
+				health ++;
+			}
+		}
 		if(Keys.down){
 			if(d){
 				ypos+= speed;
