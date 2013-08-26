@@ -46,6 +46,7 @@ public class Journal {
 	}
 	
 	public static void render(Graphics g){
+	
 		if(show){
 			if(jo.size() > 0){
 				g.drawImage(jback, 0, 0, null);

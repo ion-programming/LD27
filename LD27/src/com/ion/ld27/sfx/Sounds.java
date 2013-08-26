@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import com.ion.ld27.map.StageManager;
+
 public class Sounds{
 	
-	public static Media sound;
 	static MediaPlayer music;
 	static ArrayList<MediaPlayer> players = new ArrayList<MediaPlayer>();
+	public static Media finalBomb;
+	public static boolean endGame = false;
 	
 	public static void load(){
 		try{
-			sound = new Media(Sounds.class.getClassLoader().getResource("res/whynot.mp3").toString());
+			finalBomb = new Media(Sounds.class.getClassLoader().getResource("res/finalbomb.mp3").toString());
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb1.mp3").toString()));
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb2.mp3").toString()));
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb3.mp3").toString()));
@@ -25,16 +28,23 @@ public class Sounds{
 	}
 	
 	public static void update(){
-		for(int n = 0; n < players.size(); n++){
-			if(players.get(n).getStatus() != MediaPlayer.Status.PLAYING && players.get(n).getStatus() != MediaPlayer.Status.PAUSED && players.get(n).getStatus() != MediaPlayer.Status.STALLED){
-				players.remove(n);
-			}
+
+		if(endGame && players.size() == 0){
+			StageManager.end = true;
 		}
 	}
 	
 	public static void play(Media m){
-		MediaPlayer med = new MediaPlayer(m);
+		final MediaPlayer med = new MediaPlayer(m);
 		med.play();
+		med.setOnEndOfMedia(new Runnable() {
+
+		    @Override
+		    public void run() {
+		        // do stuff
+		       players.remove(med);
+		    }
+		});
 		players.add(med);
 	}
 	

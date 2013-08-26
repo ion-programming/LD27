@@ -22,7 +22,7 @@ public class Player extends Entity {
 	
 	@Override
 	public void destroy(){
-		StageManager.end = true;
+		StageManager.initStage(StageManager.stage);
 	}
 	@Override
 	public void ai(){

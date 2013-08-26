@@ -96,6 +96,7 @@ public class StageManager {
 			Game.entities.add(new JournalPage(7616, 768, 7));
 			Game.entities.add(new CavePortal(6912, 2944, false, false, false));
 			Game.entities.add(new BombTrig(8512, 2112));
+
 			Map.load();
 		}
 	}

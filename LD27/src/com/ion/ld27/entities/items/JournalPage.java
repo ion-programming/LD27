@@ -7,6 +7,8 @@ import com.ion.ld27.gfx.Images;
 import com.ion.ld27.hud.GPS;
 import com.ion.ld27.hud.HUD;
 import com.ion.ld27.hud.Journal;
+import com.ion.ld27.sfx.SoundManager;
+import com.ion.ld27.sfx.Sounds;
 
 public class JournalPage extends Entity{
 	public int id;
@@ -56,6 +58,13 @@ public class JournalPage extends Entity{
 		else if(id == 7){
 			Journal.jo.add(Journal.j7);
 			GPS.startFlashing = true;
+			SoundManager.farBombsPlaying = false;
+			SoundManager.music = false;
+			Journal.show = true;
+			Sounds.play(Sounds.finalBomb);
+			Sounds.update();
+			Sounds.endGame = true;
+			
 		}
 		Journal.j = Journal.jo.size() - 1;
 		HUD.storyText(new String[]{"Journal entry found",  "Press j to open"},new int[]{2, 2}, true);

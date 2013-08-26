@@ -21,6 +21,8 @@ public class SoundManager {
 	static int rTime = r.nextInt(maxDelay-minDelay)+ minDelay;;
 	public static int mode = 0;
 	static Random random = new Random();
+	public static boolean music = true;
+	
 	
 	public static void update(){
 		time = System.nanoTime() / 1000000000;
@@ -28,7 +30,6 @@ public class SoundManager {
 			if(farBomb){
 				lastTime = System.nanoTime() / 1000000000;
 				rTime = r.nextInt(maxDelay-minDelay)+ minDelay;
-				//play random sound
 				int s = r.nextInt(farBombsMedia.size());
 				Sounds.play(farBombsMedia.get(s));
 				farBomb = false;
@@ -37,7 +38,7 @@ public class SoundManager {
 				farBomb = true;
 			}
 		}
-		if(System.nanoTime() - startLoop > 10000000000l){
+		if(music && System.nanoTime() - startLoop > 10000000000l){
 			System.out.println("asd");
 			int oldMode = mode;
 			mode = random.nextInt(5);
