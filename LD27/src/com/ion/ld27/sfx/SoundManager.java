@@ -16,7 +16,7 @@ public class SoundManager {
 	static boolean farBomb = false;
 	static ArrayList<Media> farBombsMedia = new ArrayList<Media>();
 	static long time = System.nanoTime() / 1000000000;
-	static long startLoop = System.nanoTime();
+	static long startLoop = 0;
 	static long lastTime = System.nanoTime() / 1000000000;
 	static int rTime = r.nextInt(maxDelay-minDelay)+ minDelay;;
 	public static int mode = 0;
@@ -42,19 +42,19 @@ public class SoundManager {
 			int oldMode = mode;
 			mode = random.nextInt(5);
 			if(mode == 0){
-				//play loop 1
+				Sounds.play(Sounds.loop1);
 			}
 			else if(mode == 1){
-				//play loop 2
+				Sounds.play(Sounds.loop2);
 			}
 			else if(mode == 2){
-				//play loop 3
+				Sounds.play(Sounds.loop3);
 			}
 			else if(mode == 3){
-				//play loop 4
+				Sounds.play(Sounds.loop4);
 			}
 			else if(mode == 4){
-				//play loop 5
+				Sounds.play(Sounds.loop5);
 			}
 			for(int n = 0; n < Game.entities.size(); n++){
 				Game.entities.get(n).newMode(mode, oldMode);
