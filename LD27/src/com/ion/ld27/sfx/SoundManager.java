@@ -39,7 +39,6 @@ public class SoundManager {
 			}
 		}
 		if(music && System.nanoTime() - startLoop > 10000000000l){
-			System.out.println("asd");
 			int oldMode = mode;
 			mode = random.nextInt(5);
 			if(mode == 0){
