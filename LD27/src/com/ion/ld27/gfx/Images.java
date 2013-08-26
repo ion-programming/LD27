@@ -16,6 +16,7 @@ public class Images {
 	public static BufferedImage map3;
 	public static BufferedImage tileImage;
 	public static BufferedImage gps;
+	public static BufferedImage camp;
 	public static BufferedImage[] tiles;
 	public static BufferedImage fontTiles;
 	public static BufferedImage[] font;
@@ -42,6 +43,7 @@ public class Images {
 	public static void load() throws IOException{
 		tileImage = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/tiles.png"));
 		gps = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/gps.png"));
+		camp = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/camp.png"));
 		tiles = ImageHandler.all(tileImage, 8, 3, 1);
 		fontTiles = ImageIO.read(Images.class.getClassLoader().getResourceAsStream("res/font.png"));
 		font = ImageHandler.all(fontTiles, 27, 2, 2);

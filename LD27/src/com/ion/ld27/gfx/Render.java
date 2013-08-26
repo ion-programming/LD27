@@ -19,6 +19,9 @@ public class Render {
 		}
 		else{
 			Map.draw(g);
+			if(StageManager.stage == 5){
+				g.drawImage(Images.camp, 113*64, 9*64, null);
+			}
 			for(int n = 0; n < Game.entities.size(); n++){
 				Game.entities.get(n).draw(g);
 			}
