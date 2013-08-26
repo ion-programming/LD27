@@ -95,7 +95,7 @@ public class Map {
 		int n3 = 0;//rat
 		int n4 = 0;//spider
 		if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
-			n0 = 30;
+			n0 = 20;
 			n1 = 20;
 		}
 		else if(StageManager.stage == 2){
