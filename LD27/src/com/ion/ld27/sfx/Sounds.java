@@ -38,9 +38,10 @@ public class Sounds{
 	}
 	
 	public static void update(){
-
-		if(endGame && players.size() == 0){
-			StageManager.end = true;
+		if(players.size() > 0){
+			if(endGame && players.get(0).getCurrentTime().toMillis() >= 20000){
+				StageManager.end = true;
+			}
 		}
 	}
 	
