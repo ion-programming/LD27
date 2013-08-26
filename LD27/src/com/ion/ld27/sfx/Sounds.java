@@ -11,11 +11,21 @@ public class Sounds{
 	static MediaPlayer music;
 	static ArrayList<MediaPlayer> players = new ArrayList<MediaPlayer>();
 	public static Media finalBomb;
+	public static Media loop1;
+	public static Media loop2;
+	public static Media loop3;
+	public static Media loop4;
+	public static Media loop5;
 	public static boolean endGame = false;
 	
 	public static void load(){
 		try{
 			finalBomb = new Media(Sounds.class.getClassLoader().getResource("res/finalbomb.mp3").toString());
+			loop1 = new Media(Sounds.class.getClassLoader().getResource("res/loop1.mp3").toString());
+			loop2 = new Media(Sounds.class.getClassLoader().getResource("res/loop2.mp3").toString());
+			loop3 = new Media(Sounds.class.getClassLoader().getResource("res/loop3.mp3").toString());
+			loop4 = new Media(Sounds.class.getClassLoader().getResource("res/loop4.mp3").toString());
+			loop5 = new Media(Sounds.class.getClassLoader().getResource("res/loop5.mp3").toString());
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb1.mp3").toString()));
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb2.mp3").toString()));
 			SoundManager.farBombsMedia.add(new Media(Sounds.class.getClassLoader().getResource("res/farbomb3.mp3").toString()));

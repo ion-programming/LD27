@@ -19,7 +19,7 @@ public class Spider extends Entity {
 	
 	public Spider(int x, int y){
 		attack = (int) (baseAttack*2);
-		healthRange = (int) (baseHealth*3);
+		healthRange = (int) (baseHealth*4);
 		health = (int) (baseHealth*3);
 		speed = 4;
 		imgs = Images.spiderTiles;

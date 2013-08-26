@@ -19,7 +19,7 @@ public class Rat extends Entity {
 	
 	public Rat(int x, int y){
 		attack = (int) (baseAttack*1);
-		healthRange = (int) (baseHealth*4);
+		healthRange = (int) (baseHealth*5);
 		health = (int) (baseHealth*4);
 		speed = 2;
 		imgs = Images.ratTiles;
