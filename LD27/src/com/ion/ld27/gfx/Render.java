@@ -20,7 +20,7 @@ public class Render {
 		else{
 			Map.draw(g);
 			if(StageManager.stage == 5){
-				g.drawImage(Images.camp, 113*64, 9*64, null);
+				g.drawImage(Images.camp, 113*64 - Game.entities.get(0).xpos + Game.width/2 - 32, 9*64 - Game.entities.get(0).ypos + Game.height/2 - 32, null);
 			}
 			for(int n = 0; n < Game.entities.size(); n++){
 				Game.entities.get(n).draw(g);

@@ -55,6 +55,7 @@ public class Game extends Applet implements Runnable, KeyListener{
 			}
 			Sounds.load();
 			StageManager.initStage(1);
+			StageManager.initStage(5);
 		}
 		
 		
