@@ -4,6 +4,10 @@ import java.awt.Graphics;
 import java.util.Random;
 
 import com.ion.ld27.Game;
+import com.ion.ld27.entities.mobs.Bear;
+import com.ion.ld27.entities.mobs.Rat;
+import com.ion.ld27.entities.mobs.Spider;
+import com.ion.ld27.entities.mobs.Tiger;
 import com.ion.ld27.gfx.Images;
 
 public class Map {
@@ -80,6 +84,137 @@ public class Map {
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+	
+	public static void addEnts(){
+		int n0 = 0;//bear
+		int n1 = 0;//tiger
+		int n3 = 0;//rat
+		int n4 = 0;//spider
+		if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
+			n0 = 30;
+			n1 = 20;
+		}
+		else if(StageManager.stage == 2){
+			n3 = 10;
+			n4 = 10;
+		}
+		else if(StageManager.stage == 4){
+			n3 = 10;
+			n4 = 10;
+		}
+		for(int n = 0; n < n0; n++){
+			boolean done = false;
+			while(!done){
+				int x = 0;
+				int y = 0;
+				if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
+					y = random.nextInt(mainMap[0].length);
+					x = random.nextInt(mainMap[0][0].length);
+				}
+				else if(StageManager.stage == 2){
+					y = random.nextInt(underMap1[0].length);
+					x = random.nextInt(underMap1[0][0].length);
+				}
+				else if(StageManager.stage == 4){
+					y = random.nextInt(underMap2[0].length);
+					x = random.nextInt(underMap2[0][0].length);
+				}
+				done = true;
+				for(int e = 0; e < Game.entities.size(); e++){
+					if(Game.entities.get(e).xpos == x*64 && Game.entities.get(e).ypos == y*64){
+						done = false;
+					}
+				}
+				if(done){
+					Game.entities.add(new Bear(x*64, y*64));
+				}
+			}
+		}
+		for(int n = 0; n < n1; n++){
+			boolean done = false;
+			while(!done){
+				int x = 0;
+				int y = 0;
+				if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
+					y = random.nextInt(mainMap[0].length);
+					x = random.nextInt(mainMap[0][0].length);
+				}
+				else if(StageManager.stage == 2){
+					y = random.nextInt(underMap1[0].length);
+					x = random.nextInt(underMap1[0][0].length);
+				}
+				else if(StageManager.stage == 4){
+					y = random.nextInt(underMap2[0].length);
+					x = random.nextInt(underMap2[0][0].length);
+				}
+				done = true;
+				for(int e = 0; e < Game.entities.size(); e++){
+					if(Game.entities.get(e).xpos == x*64 && Game.entities.get(e).ypos == y*64){
+						done = false;
+					}
+				}
+				if(done){
+					Game.entities.add(new Tiger(x*64, y*64));
+				}
+			}
+		}
+		for(int n = 0; n < n3; n++){
+			boolean done = false;
+			while(!done){
+				int x = 0;
+				int y = 0;
+				if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
+					y = random.nextInt(mainMap[0].length);
+					x = random.nextInt(mainMap[0][0].length);
+				}
+				else if(StageManager.stage == 2){
+					y = random.nextInt(underMap1[0].length);
+					x = random.nextInt(underMap1[0][0].length);
+				}
+				else if(StageManager.stage == 4){
+					y = random.nextInt(underMap2[0].length);
+					x = random.nextInt(underMap2[0][0].length);
+				}
+				done = true;
+				for(int e = 0; e < Game.entities.size(); e++){
+					if(Game.entities.get(e).xpos == x*64 && Game.entities.get(e).ypos == y*64){
+						done = false;
+					}
+				}
+				if(done){
+					Game.entities.add(new Rat(x*64, y*64));
+				}
+			}
+		}
+		for(int n = 0; n < n4; n++){
+			boolean done = false;
+			while(!done){
+				int x = 0;
+				int y = 0;
+				if(StageManager.stage == 1 || StageManager.stage == 3 || StageManager.stage == 5){
+					y = random.nextInt(mainMap[0].length);
+					x = random.nextInt(mainMap[0][0].length);
+				}
+				else if(StageManager.stage == 2){
+					y = random.nextInt(underMap1[0].length);
+					x = random.nextInt(underMap1[0][0].length);
+				}
+				else if(StageManager.stage == 4){
+					y = random.nextInt(underMap2[0].length);
+					x = random.nextInt(underMap2[0][0].length);
+				}
+				done = true;
+				for(int e = 0; e < Game.entities.size(); e++){
+					if(Game.entities.get(e).xpos == x*64 && Game.entities.get(e).ypos == y*64){
+						done = false;
+					}
+				}
+				if(done){
+					Game.entities.add(new Spider(x*64, y*64));
 				}
 			}
 		}

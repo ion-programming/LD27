@@ -11,7 +11,6 @@ import com.ion.ld27.entities.items.Lantern;
 import com.ion.ld27.entities.items.Machete;
 import com.ion.ld27.entities.items.Pipe;
 import com.ion.ld27.entities.items.Stick;
-import com.ion.ld27.entities.mobs.Tiger;
 import com.ion.ld27.hud.GPS;
 
 public class StageManager {
@@ -30,8 +29,8 @@ public class StageManager {
 			Game.entities.add(new JournalPage(1280, 1600, 1));
 			Game.entities.add(new Lantern(1728, 3200));
 			Game.entities.add(new CavePortal(1728, 4096, false, true, true));
-			Game.entities.add(new Tiger(900, 640));
 			Map.load();
+			Map.addEnts();
 		}
 		else if(newStage == 2){
 			stage = 2;
@@ -46,6 +45,7 @@ public class StageManager {
 			Game.entities.add(new CavePortal(1024, 3328, true, false, false));
 			Game.entities.add(new CavePortal(1984, 832, true, true, true));
 			Map.load();
+			Map.addEnts();
 		}
 		else if(newStage == 3){
 			stage = 3;
@@ -64,6 +64,7 @@ public class StageManager {
 			Game.entities.add(new CavePortal(2048, 1216, false, false, false));
 			Game.entities.add(new CavePortal(5760, 2880, false, true, true));
 			Map.load();
+			Map.addEnts();
 		}
 		else if(newStage == 4){
 			stage = 4;
@@ -79,6 +80,7 @@ public class StageManager {
 			Game.entities.add(new CavePortal(576, 2048, true, false, false));
 			Game.entities.add(new CavePortal(3328, 1664, true, true, true));
 			Map.load();
+			Map.addEnts();
 		}
 		else if(newStage == 5){
 			stage = 5;
@@ -96,8 +98,8 @@ public class StageManager {
 			Game.entities.add(new JournalPage(7616, 768, 7));
 			Game.entities.add(new CavePortal(6912, 2944, false, false, false));
 			Game.entities.add(new BombTrig(8512, 2112));
-
 			Map.load();
+			Map.addEnts();
 		}
 	}
 }
