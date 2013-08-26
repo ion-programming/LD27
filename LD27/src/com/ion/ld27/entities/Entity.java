@@ -9,6 +9,7 @@ import com.ion.ld27.entities.mobs.Bear;
 import com.ion.ld27.entities.mobs.Rat;
 import com.ion.ld27.entities.mobs.Spider;
 import com.ion.ld27.entities.mobs.Tiger;
+import com.ion.ld27.sfx.Sounds;
 
 public class Entity {
 
@@ -216,6 +217,11 @@ public class Entity {
 		canPunch = 25;
 	}
 	public void hurt(int strength){
-		health-= strength;
+		if(getClass() == Player.class && Sounds.endGame == true){
+			//do nothing
+		}
+		else{
+			health-= strength;
+		}
 	}
 }
